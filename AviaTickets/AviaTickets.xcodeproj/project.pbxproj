@@ -12,6 +12,9 @@
 		0479D4C92417BD8900E839F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0479D4C72417BD8900E839F9 /* LaunchScreen.storyboard */; };
 		0479D4CC2417BD8900E839F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479D4CB2417BD8900E839F9 /* main.m */; };
 		0479D4D52417C93600E839F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479D4D42417C93600E839F9 /* RootViewController.m */; };
+		0479D4D9241D047B00E839F9 /* CountryClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479D4D8241D047B00E839F9 /* CountryClass.m */; };
+		0479D4DC241D097500E839F9 /* AirportClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479D4DB241D097500E839F9 /* AirportClass.m */; };
+		0479D4DF241D0F4D00E839F9 /* CityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479D4DE241D0F4D00E839F9 /* CityClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,12 @@
 		0479D4CB2417BD8900E839F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0479D4D32417C93600E839F9 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		0479D4D42417C93600E839F9 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0479D4D7241D047B00E839F9 /* CountryClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryClass.h; sourceTree = "<group>"; };
+		0479D4D8241D047B00E839F9 /* CountryClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryClass.m; sourceTree = "<group>"; };
+		0479D4DA241D097500E839F9 /* AirportClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirportClass.h; sourceTree = "<group>"; };
+		0479D4DB241D097500E839F9 /* AirportClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirportClass.m; sourceTree = "<group>"; };
+		0479D4DD241D0F4D00E839F9 /* CityClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityClass.h; sourceTree = "<group>"; };
+		0479D4DE241D0F4D00E839F9 /* CityClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 		0479D4B82417BD8200E839F9 /* AviaTickets */ = {
 			isa = PBXGroup;
 			children = (
+				0479D4D6241D042B00E839F9 /* Manager Classes */,
 				0479D4B92417BD8200E839F9 /* AppDelegate.h */,
 				0479D4BA2417BD8200E839F9 /* AppDelegate.m */,
 				0479D4D22417C8F400E839F9 /* RootViewController */,
@@ -74,6 +84,19 @@
 				0479D4D42417C93600E839F9 /* RootViewController.m */,
 			);
 			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		0479D4D6241D042B00E839F9 /* Manager Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0479D4D7241D047B00E839F9 /* CountryClass.h */,
+				0479D4D8241D047B00E839F9 /* CountryClass.m */,
+				0479D4DA241D097500E839F9 /* AirportClass.h */,
+				0479D4DB241D097500E839F9 /* AirportClass.m */,
+				0479D4DD241D0F4D00E839F9 /* CityClass.h */,
+				0479D4DE241D0F4D00E839F9 /* CityClass.m */,
+			);
+			path = "Manager Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +170,10 @@
 			files = (
 				0479D4BB2417BD8200E839F9 /* AppDelegate.m in Sources */,
 				0479D4D52417C93600E839F9 /* RootViewController.m in Sources */,
+				0479D4DC241D097500E839F9 /* AirportClass.m in Sources */,
 				0479D4CC2417BD8900E839F9 /* main.m in Sources */,
+				0479D4D9241D047B00E839F9 /* CountryClass.m in Sources */,
+				0479D4DF241D0F4D00E839F9 /* CityClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

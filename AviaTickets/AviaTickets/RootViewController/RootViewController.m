@@ -6,6 +6,10 @@
 //  Copyright © 2020 Sam Mazniker. All rights reserved.
 //
 
+//RootViewController
+//Login handling
+//Pre-Start Downloads && API-Requests
+
 #import "RootViewController.h"
 
 @interface RootViewController ()
