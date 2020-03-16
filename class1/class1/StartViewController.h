@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SecondViewController.h"
 
 @interface StartViewController : UIViewController
+
+//@property (nonatomic, strong) UIButton* nextView;
 
 
 @end

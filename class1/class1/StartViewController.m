@@ -14,10 +14,27 @@
 
 @implementation StartViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    
+    UIButton* nextView = [[UIButton alloc] init];
+    CGRect buttonFrame = CGRectMake(20, 50, 300, 100);
+    nextView.frame = buttonFrame;
+    [nextView.titleLabel setText:@"NextViewController"];
+    [nextView.titleLabel setTextColor:[UIColor redColor]];
+    [nextView addTarget: self action:@selector(transfer:) forControlEvents: UIControlEventTouchUpInside];
+    [self.view addSubview:nextView];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+}
 
+-(void)transfer:(id)sender{
+    SecondViewController* second = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController: second animated: YES];
 }
 
 
