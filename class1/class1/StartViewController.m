@@ -20,8 +20,10 @@
     UIButton* nextView = [[UIButton alloc] init];
     CGRect buttonFrame = CGRectMake(20, 50, 300, 100);
     nextView.frame = buttonFrame;
-    [nextView.titleLabel setText:@"NextViewController"];
-    [nextView.titleLabel setTextColor:[UIColor redColor]];
+    
+    [nextView setBackgroundColor:[UIColor grayColor]];
+    [nextView setTitle:@"Press to next ViewController" forState: UIControlStateNormal];
+    
     [nextView addTarget: self action:@selector(transfer:) forControlEvents: UIControlEventTouchUpInside];
     [self.view addSubview:nextView];
 
