@@ -10,6 +10,10 @@
 
 @interface SecondViewController ()
 
+@property (nonatomic, strong) UISegmentedControl* controller;
+@property (nonatomic, strong) UIButton* updateView;
+@property (nonatomic, strong) UILabel* themeName;
+
 @end
 
 @implementation SecondViewController
@@ -17,24 +21,22 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    UISegmentedControl* controller = [[UISegmentedControl alloc] initWithItems:@[@"Default", @"Dark"]];;
-    UILabel* themeName = [[UILabel alloc] init];
-    
-    self.view.backgroundColor = ThemeManager.Theme.mainColor;;
+    _controller = [[UISegmentedControl alloc] initWithItems:@[@"Default", @"Dark"]];;
     CGRect nameFrame = CGRectMake(20, 20, 300, 100);
+    _themeName = [[UILabel alloc] initWithFrame:nameFrame];
     
-    [themeName setFont:ThemeManager.Theme.mainFont];
-    [themeName setText:ThemeManager.Theme.themeName];
-    [themeName setTextColor:ThemeManager.Theme.fontColor];
-    themeName.frame = nameFrame;
+    [self.view setBackgroundColor:[ThemeManager Theme].currentTheme.mainColor];
+    
+    [_themeName setFont:ThemeManager.Theme.currentTheme.mainFont];
+    [_themeName setText:ThemeManager.Theme.currentTheme.themeName];
+    [_themeName setTextColor:ThemeManager.Theme.currentTheme.fontColor];
     
     CGRect controllerFrame = CGRectMake(20, 200, 300, 100);
-    controller.frame = controllerFrame;
-    controller.selectedSegmentIndex = 0;
-    controller.selectedSegmentTintColor = [UIColor redColor];
+    _controller.frame = controllerFrame;
+    _controller.selectedSegmentTintColor = [UIColor redColor];
     
-    [self.view addSubview:themeName];
-    [self.view addSubview:controller];
+    [self.view addSubview: _themeName];
+    [self.view addSubview: _controller];
 }
 
 - (void)viewDidLoad {

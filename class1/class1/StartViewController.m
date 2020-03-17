@@ -18,6 +18,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
+    [self.view setBackgroundColor:[ThemeManager Theme].currentTheme.mainColor];
+    
     UIView* superview = self.view;
     _nextView = [UIButton buttonWithType: UIButtonTypeRoundedRect];
     _nextView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -35,7 +37,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)transfer:(id)sender{

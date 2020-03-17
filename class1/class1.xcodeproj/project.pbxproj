@@ -14,6 +14,7 @@
 		04763DA2241F8E8400A6EB0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04763DA1241F8E8400A6EB0F /* main.m */; };
 		04763DAA241F93E100A6EB0F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04763DA9241F93E100A6EB0F /* SecondViewController.m */; };
 		04763DAD241F946500A6EB0F /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04763DAC241F946500A6EB0F /* ThemeManager.m */; };
+		04763DB02420D46500A6EB0F /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 04763DAF2420D46500A6EB0F /* Theme.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		04763DA9241F93E100A6EB0F /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		04763DAB241F946500A6EB0F /* ThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
 		04763DAC241F946500A6EB0F /* ThemeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		04763DAE2420D46500A6EB0F /* Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
+		04763DAF2420D46500A6EB0F /* Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				04763D95241F8E7F00A6EB0F /* StartViewController.h */,
 				04763D96241F8E7F00A6EB0F /* StartViewController.m */,
 				04763D9B241F8E8400A6EB0F /* Assets.xcassets */,
+				04763DAE2420D46500A6EB0F /* Theme.h */,
+				04763DAF2420D46500A6EB0F /* Theme.m */,
 				04763DAB241F946500A6EB0F /* ThemeManager.h */,
 				04763DAC241F946500A6EB0F /* ThemeManager.m */,
 				04763DA8241F93E100A6EB0F /* SecondViewController.h */,
@@ -150,6 +155,7 @@
 				04763DAA241F93E100A6EB0F /* SecondViewController.m in Sources */,
 				04763D97241F8E7F00A6EB0F /* StartViewController.m in Sources */,
 				04763DAD241F946500A6EB0F /* ThemeManager.m in Sources */,
+				04763DB02420D46500A6EB0F /* Theme.m in Sources */,
 				04763D91241F8E7F00A6EB0F /* AppDelegate.m in Sources */,
 				04763DA2241F8E8400A6EB0F /* main.m in Sources */,
 			);
