@@ -8,21 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Theme.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum {
-    Default,
-    Dark
-} ThemeStyle;
-
 @interface ThemeManager : NSObject
 
-@property (nonatomic, strong) UIColor* mainColor;
-@property (nonatomic, strong) UIFont* mainFont;
-@property (nonatomic, strong) UIColor* fontColor;
-@property (nonatomic, strong) NSString* themeName;
-
+@property (nonatomic, strong) Theme* currentTheme;
+@property (nonatomic, strong) NSArray* themeDataBase;
 
 +(instancetype)Theme;
 -(void)changeThemeTo:(ThemeStyle) style;

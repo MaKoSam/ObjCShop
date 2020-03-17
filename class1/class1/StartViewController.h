@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SecondViewController.h"
+#import "ThemeManager.h"
 
 @interface StartViewController : UIViewController
-
-//@property (nonatomic, strong) UIButton* nextView;
 
 
 @end

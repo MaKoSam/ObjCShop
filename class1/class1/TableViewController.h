@@ -1,18 +1,18 @@
 //
-//  SecondViewController.h
+//  TableViewController.h
 //  class1
 //
-//  Created by Sam Mazniker on 16/03/2020.
+//  Created by Sam Mazniker on 17/03/2020.
 //  Copyright © 2020 Sam Mazniker. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "ThemeTableCell.h"
 #import "ThemeManager.h"
-#import "TableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SecondViewController : UIViewController
+@interface TableViewController : UIViewController <UITableViewDataSource>
 
 @end
 

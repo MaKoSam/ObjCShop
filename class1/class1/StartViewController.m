@@ -10,28 +10,33 @@
 
 @interface StartViewController ()
 
+@property (nonatomic, strong) UIButton* nextView;
+
 @end
 
 @implementation StartViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
+    [self.view setBackgroundColor:[ThemeManager Theme].currentTheme.mainColor];
     
-    UIButton* nextView = [[UIButton alloc] init];
-    CGRect buttonFrame = CGRectMake(20, 50, 300, 100);
-    nextView.frame = buttonFrame;
+    UIView* superview = self.view;
+    _nextView = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+    _nextView.translatesAutoresizingMaskIntoConstraints = NO;
+    [_nextView setBackgroundColor:[UIColor grayColor]];
+    [_nextView setTitle:@"Press to next ViewController" forState: UIControlStateNormal];
+    [_nextView addTarget: self action:@selector(transfer:) forControlEvents: UIControlEventTouchUpInside];
+    [self.view addSubview:_nextView];
     
-    [nextView setBackgroundColor:[UIColor grayColor]];
-    [nextView setTitle:@"Press to next ViewController" forState: UIControlStateNormal];
+    NSLayoutConstraint* buttonCentreX = [NSLayoutConstraint constraintWithItem:_nextView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superview attribute:NSLayoutAttributeCenterX multiplier:1.0F constant:0.0F];
+    NSLayoutConstraint* buttonCentreY = [NSLayoutConstraint constraintWithItem:_nextView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:superview attribute:NSLayoutAttributeCenterY multiplier:1.0F constant:0.0F];
     
-    [nextView addTarget: self action:@selector(transfer:) forControlEvents: UIControlEventTouchUpInside];
-    [self.view addSubview:nextView];
+    [superview addConstraints:@[buttonCentreY, buttonCentreX]];
 
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)transfer:(id)sender{
