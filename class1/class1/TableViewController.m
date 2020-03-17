@@ -10,13 +10,47 @@
 
 @interface TableViewController ()
 
+@property (nonatomic, strong) UITableView* tableView;
+
 @end
 
 @implementation TableViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    
+    //TableView Setup
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView.dataSource = self;
+//    _tableView.delegate = self;
+    [_tableView registerClass: [ThemeTableCell self] forCellReuseIdentifier:@"ThemeCell"];
+    [self.view addSubview:_tableView];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [[ThemeManager Theme].themeDataBase count];
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ThemeTableCell* newCell = [_tableView dequeueReusableCellWithIdentifier:@"ThemeCell"];
+    if(!newCell){
+        newCell = [[ThemeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ThemeCell"];
+        newCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    //NewCell setup according Theme
+    Theme* display = [[ThemeManager Theme].themeDataBase objectAtIndex: indexPath.row];
+    
+    [newCell.themeName setTextColor: display.fontColor];
+    [newCell.themeName setText: display.themeName];
+    [newCell setBackgroundColor: display.mainColor];
+    return newCell;
 }
 
 /*
