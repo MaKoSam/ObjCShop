@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ThemeManager.h"
+#import "TableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
