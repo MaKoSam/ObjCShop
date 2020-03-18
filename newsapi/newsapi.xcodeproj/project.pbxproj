@@ -13,6 +13,7 @@
 		043750AD24221CF3007930D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 043750AC24221CF3007930D7 /* main.m */; };
 		043750B624224F6C007930D7 /* StartManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043750B524224F6C007930D7 /* StartManagerViewController.m */; };
 		043750BA2422520C007930D7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 043750B92422520C007930D7 /* NetworkManager.m */; };
+		043750C124228C5D007930D7 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 043750C024228C5D007930D7 /* Article.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		043750B524224F6C007930D7 /* StartManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartManagerViewController.m; sourceTree = "<group>"; };
 		043750B82422520C007930D7 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		043750B92422520C007930D7 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		043750BF24228C5D007930D7 /* Article.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		043750C024228C5D007930D7 /* Article.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +64,10 @@
 			children = (
 				0437509A24221CF1007930D7 /* AppDelegate.h */,
 				0437509B24221CF1007930D7 /* AppDelegate.m */,
-				043750B7242251C3007930D7 /* NetworkManager */,
 				043750A624221CF3007930D7 /* Assets.xcassets */,
 				043750B324224F21007930D7 /* StartManager */,
+				043750B7242251C3007930D7 /* NetworkManager */,
+				043750BD24228C39007930D7 /* Data */,
 				043750A824221CF3007930D7 /* LaunchScreen.storyboard */,
 				043750AB24221CF3007930D7 /* Info.plist */,
 				043750AC24221CF3007930D7 /* main.m */,
@@ -87,6 +91,23 @@
 				043750B92422520C007930D7 /* NetworkManager.m */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		043750BD24228C39007930D7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				043750BE24228C47007930D7 /* Article */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		043750BE24228C47007930D7 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				043750BF24228C5D007930D7 /* Article.h */,
+				043750C024228C5D007930D7 /* Article.m */,
+			);
+			path = Article;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043750C124228C5D007930D7 /* Article.m in Sources */,
 				043750BA2422520C007930D7 /* NetworkManager.m in Sources */,
 				043750B624224F6C007930D7 /* StartManagerViewController.m in Sources */,
 				0437509C24221CF1007930D7 /* AppDelegate.m in Sources */,

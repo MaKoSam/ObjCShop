@@ -14,7 +14,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if(!self.window){
         self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
