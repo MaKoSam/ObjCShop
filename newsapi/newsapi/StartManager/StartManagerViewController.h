@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NetworkManager.h"
+#import "NewsTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

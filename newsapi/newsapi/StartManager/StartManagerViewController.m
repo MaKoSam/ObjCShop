@@ -16,11 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
     [self.view setBackgroundColor:[UIColor yellowColor]];
     NetworkManager* handler = [[NetworkManager alloc] init];
-    
+    [handler requestNewsHeadLine:^(NSMutableArray* articles){
+        dispatch_async(mainQueue, ^{
+            [self succesfullyLoaded];
+        });
+    }];
     
     // Do any additional setup after loading the view.
+}
+
+-(void)succesfullyLoaded{
+    NewsTableViewController* newsHeadline = [[NewsTableViewController alloc] init];
+    NSLog(@"Presenting - newsHeadline");
+    [self.navigationController pushViewController:newsHeadline animated:YES];
 }
 
 /*
