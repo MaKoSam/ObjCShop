@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkManager : NSObject
 
--(void)requestNewsHeadLine;
+-(void)requestNewsHeadLine:(void(^)(NSMutableArray* articles))completionHandler;
 
 @end
 

@@ -18,7 +18,8 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor yellowColor]];
     NetworkManager* handler = [[NetworkManager alloc] init];
-    handler.requestNewsHeadLine;
+    
+    
     // Do any additional setup after loading the view.
 }
 

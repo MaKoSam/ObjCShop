@@ -10,7 +10,7 @@
 
 @implementation NetworkManager
 
--(void)requestNewsHeadLine{
+-(void)requestNewsHeadLine:(NSMutableArray*(^)(NSMutableArray*))completionHandler{
     NSURL* urlRequest = [NSURL URLWithString:@"https://newsapi.org/v2/top-headlines?country=us&apiKey=f3253bce1deb497c89a6647283f3d46a"];
     
     NSURLSessionDataTask* requestNewsHeadline = [[NSURLSession sharedSession] dataTaskWithURL: urlRequest completionHandler:^(NSData* data, NSURLResponse* response, NSError* error){
@@ -19,12 +19,15 @@
                               JSONObjectWithData: data
                               options: kNilOptions
                               error: &erroR];
-        NSArray* articles = [JSON objectForKey:@"articles"];
+        NSArray* jsonArticles = [JSON objectForKey:@"articles"];
+        NSMutableArray* articles = [NSMutableArray array];
         
-        for(NSDictionary* items in articles) {
+        for(NSDictionary* items in jsonArticles) {
             Article* tmp = [[Article alloc] initFromDictionary:items];
-            NSLog(@"ARTICLE-%@\n", tmp.author);
+            [articles addObject:tmp];
         }
+        
+        completionHandler(articles);
         
     }];
     
