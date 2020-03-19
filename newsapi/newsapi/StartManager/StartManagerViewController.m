@@ -42,16 +42,16 @@
     NetworkManager* handler = [[NetworkManager alloc] init];
     [handler requestNewsHeadLine:^(NSMutableArray* articles){
         dispatch_async(mainQueue, ^{
-            [_indicator stopAnimating];
-            [self succesfullyLoaded];
+            [self->_indicator stopAnimating];
+            [self succesfullyLoadedData: articles];
         });
     }];
     
     // Do any additional setup after loading the view.
 }
 
--(void)succesfullyLoaded{
-    NewsTableViewController* newsHeadline = [[NewsTableViewController alloc] init];
+-(void)succesfullyLoadedData:(NSMutableArray*)data{
+    NewsTableViewController* newsHeadline = [[NewsTableViewController alloc] initWithData:data];
     [self.navigationController pushViewController:newsHeadline animated:YES];
 }
 

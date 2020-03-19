@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Article.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsTableViewController : UIViewController
+
+@property (nonatomic, strong) NSMutableArray* articles;
+-(instancetype) initWithData:(NSMutableArray*)articles;
 
 @end
 

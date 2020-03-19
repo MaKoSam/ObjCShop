@@ -20,6 +20,12 @@
     // Do any additional setup after loading the view.
 }
 
+-(instancetype) initWithData:(NSMutableArray *)articles{
+    self = [super init];
+    self.articles = [[NSMutableArray alloc] initWithArray:articles];
+    return self;
+}
+
 /*
 #pragma mark - Navigation
 
