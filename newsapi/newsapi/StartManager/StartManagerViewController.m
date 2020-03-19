@@ -10,17 +10,39 @@
 
 @interface StartManagerViewController ()
 
+@property (nonatomic, strong) UIActivityIndicatorView* indicator;
+
 @end
 
 @implementation StartManagerViewController
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //View Setup
+    [self.view setBackgroundColor:[UIColor darkGrayColor]];
+    [self.navigationController navigationBar].hidden = YES;
+    
+    //ActivityIndicator Setup
+    _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
+    [_indicator setColor:[UIColor whiteColor]];
+    _indicator.hidesWhenStopped = YES;
+    _indicator.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint* indicatorX = [NSLayoutConstraint constraintWithItem:_indicator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
+    NSLayoutConstraint* indicatorY = [NSLayoutConstraint constraintWithItem:_indicator attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
+    [self.view addSubview:_indicator];
+    [self.view addConstraints:@[indicatorX, indicatorY]];
+    [_indicator startAnimating];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     dispatch_queue_t mainQueue = dispatch_get_main_queue();
-    [self.view setBackgroundColor:[UIColor yellowColor]];
     NetworkManager* handler = [[NetworkManager alloc] init];
     [handler requestNewsHeadLine:^(NSMutableArray* articles){
         dispatch_async(mainQueue, ^{
+            [_indicator stopAnimating];
             [self succesfullyLoaded];
         });
     }];
@@ -30,7 +52,6 @@
 
 -(void)succesfullyLoaded{
     NewsTableViewController* newsHeadline = [[NewsTableViewController alloc] init];
-    NSLog(@"Presenting - newsHeadline");
     [self.navigationController pushViewController:newsHeadline animated:YES];
 }
 
