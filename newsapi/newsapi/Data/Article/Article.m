@@ -24,4 +24,10 @@
     return self;
 }
 
+-(instancetype) initFromData:(Article *)data{
+    self = [super init];
+    self = data;
+    return self;
+}
+
 @end

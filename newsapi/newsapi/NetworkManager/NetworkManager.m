@@ -35,4 +35,14 @@
     
 }
 
+-(void)requestImageAt:(NSString *)url with:(void (^)(UIImage * _Nonnull))completionHandler{
+    NSURL* urlRequest = [NSURL URLWithString:url];
+    NSURLSessionDownloadTask* downloadPhoto = [[NSURLSession sharedSession] downloadTaskWithURL:urlRequest completionHandler:^(NSURL* location, NSURLResponse* response, NSError* error) {
+        UIImage* downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+        completionHandler(downloadedImage);
+    }];
+    
+    [downloadPhoto resume];
+}
+
 @end

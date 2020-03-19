@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Article.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NetworkManager : NSObject
 
 -(void)requestNewsHeadLine:(void(^)(NSMutableArray* articles))completionHandler;
+-(void)requestImageAt:(NSString*)url with:(void(^)(UIImage* Image))completionHandler;
+
 
 @end
 

@@ -15,6 +15,7 @@
 		043750BA2422520C007930D7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 043750B92422520C007930D7 /* NetworkManager.m */; };
 		043750C124228C5D007930D7 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 043750C024228C5D007930D7 /* Article.m */; };
 		043750C724229595007930D7 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043750C624229595007930D7 /* NewsTableViewController.m */; };
+		043750CB242354B4007930D7 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043750CA242354B4007930D7 /* ArticleTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		043750C024228C5D007930D7 /* Article.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		043750C524229595007930D7 /* NewsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
 		043750C624229595007930D7 /* NewsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		043750C9242354B4007930D7 /* ArticleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
+		043750CA242354B4007930D7 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +122,18 @@
 			children = (
 				043750C524229595007930D7 /* NewsTableViewController.h */,
 				043750C624229595007930D7 /* NewsTableViewController.m */,
+				043750C82423548F007930D7 /* Article Cell */,
 			);
 			path = NewsTable;
+			sourceTree = "<group>";
+		};
+		043750C82423548F007930D7 /* Article Cell */ = {
+			isa = PBXGroup;
+			children = (
+				043750C9242354B4007930D7 /* ArticleTableViewCell.h */,
+				043750CA242354B4007930D7 /* ArticleTableViewCell.m */,
+			);
+			path = "Article Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +208,7 @@
 				043750C724229595007930D7 /* NewsTableViewController.m in Sources */,
 				043750C124228C5D007930D7 /* Article.m in Sources */,
 				043750BA2422520C007930D7 /* NetworkManager.m in Sources */,
+				043750CB242354B4007930D7 /* ArticleTableViewCell.m in Sources */,
 				043750B624224F6C007930D7 /* StartManagerViewController.m in Sources */,
 				0437509C24221CF1007930D7 /* AppDelegate.m in Sources */,
 				043750AD24221CF3007930D7 /* main.m in Sources */,

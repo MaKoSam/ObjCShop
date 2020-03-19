@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* content;
 
 -(instancetype) initFromDictionary:(NSDictionary*)dictionary;
+-(instancetype) initFromData:(Article*)data;
 
 @end
 
