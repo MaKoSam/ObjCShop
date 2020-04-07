@@ -6,6 +6,9 @@
 //  Copyright © 2020 Sam Mazniker. All rights reserved.
 //
 
+
+//Develop: Should have an itentity saved to the device-cache folder
+
 #import "DestinationsManager.h"
 
 @implementation DestinationsManager
@@ -18,6 +21,44 @@
     });
     return instance;
 }
+
+-(NSArray*) searchPlaceWithKey:(NSString *)key{
+    NSMutableArray* results = [[NSMutableArray alloc] init];
+    NSString* countryCodeSearch = [[NSString alloc] init];
+    NSString* cityCodeSearch = [[NSString alloc] init];
+    
+    for(Country* elements in DestinationsManager.sharedInstance.countries){
+        if(elements.name == key || elements.code == key){
+            countryCodeSearch = elements.code;
+            [results addObject: elements];
+            exit;
+        }
+    }
+    for(City* elements in DestinationsManager.sharedInstance.cities){
+        if(elements.name == key || elements.code == key){
+            //elements.country_code == countryCodeSearch)
+            cityCodeSearch = elements.code;
+            [results addObject: elements];
+            exit;
+        }
+    }
+    for(Airport* elements in DestinationsManager.sharedInstance.airports){
+        if(elements.name == key || elements.code == key){
+            // || elements.country_code == countryCodeSearch || elements.city_code == cityCodeSearch
+            [results addObject: elements];
+            exit;
+        }
+    }
+    if([results count] != 0){
+        return results;
+    } else {
+        [results addObject:DestinationsManager.sharedInstance.airports.firstObject];
+        return results;
+    }
+}
+
+
+
 
 -(void) uploadDataFrom:(NSArray *)json ofType:(int)type{
     if(!DestinationsManager.sharedInstance.airports){

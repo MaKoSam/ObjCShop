@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04872210243CE9960028992D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487220F243CE9960028992D /* SearchViewController.m */; };
 		04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E717FC243B8A9E00AA9335 /* AppDelegate.m */; };
 		04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */; };
 		04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180A243B8AA500AA9335 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0487220E243CE9960028992D /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		0487220F243CE9960028992D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		04E717F8243B8A9E00AA9335 /* TripPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E717FB243B8A9E00AA9335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04E717FC243B8A9E00AA9335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0487220D243CE9030028992D /* Search Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0487220E243CE9960028992D /* SearchViewController.h */,
+				0487220F243CE9960028992D /* SearchViewController.m */,
+			);
+			path = "Search Controller";
+			sourceTree = "<group>";
+		};
 		04E717EF243B8A9E00AA9335 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +96,7 @@
 				04E71821243C8FDB00AA9335 /* Essential Classes */,
 				04E71817243C6AB600AA9335 /* Launch Handler */,
 				04E7180F243B8AA500AA9335 /* Info.plist */,
+				0487220D243CE9030028992D /* Search Controller */,
 				04E71810243B8AA500AA9335 /* main.m */,
 				04E7181E243C746900AA9335 /* Images */,
 				04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */,
@@ -259,6 +272,7 @@
 			files = (
 				04E71835243C9B0200AA9335 /* DestinationsManager.m in Sources */,
 				04E71811243B8AA500AA9335 /* main.m in Sources */,
+				04872210243CE9960028992D /* SearchViewController.m in Sources */,
 				04E71828243C907F00AA9335 /* Airport.m in Sources */,
 				04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */,
 				04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */,

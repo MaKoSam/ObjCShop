@@ -21,7 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(instancetype)sharedInstance;
 
--(void) uploadDataFrom:(NSArray*)json ofType:(int)type; 
+-(void) uploadDataFrom:(NSArray*)json ofType:(int)type;
+
+
+-(NSArray*) searchPlaceWithKey:(NSString*)key;
 
 @end
 
