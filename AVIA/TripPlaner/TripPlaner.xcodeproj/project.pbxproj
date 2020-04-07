@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E717FC243B8A9E00AA9335 /* AppDelegate.m */; };
+		04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */; };
+		04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180A243B8AA500AA9335 /* Assets.xcassets */; };
+		04E7180E243B8AA500AA9335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */; };
+		04E71811243B8AA500AA9335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71810243B8AA500AA9335 /* main.m */; };
+		04E7181D243C6B8C00AA9335 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7181C243C6B8C00AA9335 /* LaunchViewController.m */; };
+		04E71820243C74DB00AA9335 /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E7181F243C74DB00AA9335 /* LaunchScreen.png */; };
+		04E71828243C907F00AA9335 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71827243C907F00AA9335 /* Airport.m */; };
+		04E7182B243C909400AA9335 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7182A243C909400AA9335 /* Country.m */; };
+		04E7182F243C90AB00AA9335 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7182E243C90AB00AA9335 /* City.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04E717F8243B8A9E00AA9335 /* TripPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E717FB243B8A9E00AA9335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04E717FC243B8A9E00AA9335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04E71808243B8A9E00AA9335 /* TripPlaner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripPlaner.xcdatamodel; sourceTree = "<group>"; };
+		04E7180A243B8AA500AA9335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04E7180D243B8AA500AA9335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04E7180F243B8AA500AA9335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E71810243B8AA500AA9335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04E7181B243C6B8C00AA9335 /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		04E7181C243C6B8C00AA9335 /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		04E7181F243C74DB00AA9335 /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
+		04E71826243C907F00AA9335 /* Airport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airport.h; sourceTree = "<group>"; };
+		04E71827243C907F00AA9335 /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
+		04E71829243C909400AA9335 /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		04E7182A243C909400AA9335 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		04E7182D243C90AB00AA9335 /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		04E7182E243C90AB00AA9335 /* City.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04E717F5243B8A9E00AA9335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04E717EF243B8A9E00AA9335 = {
+			isa = PBXGroup;
+			children = (
+				04E717FA243B8A9E00AA9335 /* TripPlaner */,
+				04E717F9243B8A9E00AA9335 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04E717F9243B8A9E00AA9335 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04E717F8243B8A9E00AA9335 /* TripPlaner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04E717FA243B8A9E00AA9335 /* TripPlaner */ = {
+			isa = PBXGroup;
+			children = (
+				04E717FB243B8A9E00AA9335 /* AppDelegate.h */,
+				04E717FC243B8A9E00AA9335 /* AppDelegate.m */,
+				04E7180A243B8AA500AA9335 /* Assets.xcassets */,
+				04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */,
+				04E71821243C8FDB00AA9335 /* Essential Classes */,
+				04E71817243C6AB600AA9335 /* Launch Handler */,
+				04E7180F243B8AA500AA9335 /* Info.plist */,
+				04E71810243B8AA500AA9335 /* main.m */,
+				04E7181E243C746900AA9335 /* Images */,
+				04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */,
+			);
+			path = TripPlaner;
+			sourceTree = "<group>";
+		};
+		04E71817243C6AB600AA9335 /* Launch Handler */ = {
+			isa = PBXGroup;
+			children = (
+				04E7181B243C6B8C00AA9335 /* LaunchViewController.h */,
+				04E7181C243C6B8C00AA9335 /* LaunchViewController.m */,
+			);
+			path = "Launch Handler";
+			sourceTree = "<group>";
+		};
+		04E7181E243C746900AA9335 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				04E7181F243C74DB00AA9335 /* LaunchScreen.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		04E71821243C8FDB00AA9335 /* Essential Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04E71825243C904000AA9335 /* Flight */,
+				04E71824243C902F00AA9335 /* City */,
+				04E71823243C901E00AA9335 /* Country */,
+				04E71822243C900F00AA9335 /* Airport */,
+			);
+			path = "Essential Classes";
+			sourceTree = "<group>";
+		};
+		04E71822243C900F00AA9335 /* Airport */ = {
+			isa = PBXGroup;
+			children = (
+				04E71826243C907F00AA9335 /* Airport.h */,
+				04E71827243C907F00AA9335 /* Airport.m */,
+			);
+			path = Airport;
+			sourceTree = "<group>";
+		};
+		04E71823243C901E00AA9335 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				04E71829243C909400AA9335 /* Country.h */,
+				04E7182A243C909400AA9335 /* Country.m */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
+		04E71824243C902F00AA9335 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				04E7182D243C90AB00AA9335 /* City.h */,
+				04E7182E243C90AB00AA9335 /* City.m */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		04E71825243C904000AA9335 /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flight;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04E717F7243B8A9E00AA9335 /* TripPlaner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04E71814243B8AA500AA9335 /* Build configuration list for PBXNativeTarget "TripPlaner" */;
+			buildPhases = (
+				04E717F4243B8A9E00AA9335 /* Sources */,
+				04E717F5243B8A9E00AA9335 /* Frameworks */,
+				04E717F6243B8A9E00AA9335 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TripPlaner;
+			productName = TripPlaner;
+			productReference = 04E717F8243B8A9E00AA9335 /* TripPlaner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04E717F0243B8A9E00AA9335 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Sam Mazniker";
+				TargetAttributes = {
+					04E717F7243B8A9E00AA9335 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 04E717F3243B8A9E00AA9335 /* Build configuration list for PBXProject "TripPlaner" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04E717EF243B8A9E00AA9335;
+			productRefGroup = 04E717F9243B8A9E00AA9335 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04E717F7243B8A9E00AA9335 /* TripPlaner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04E717F6243B8A9E00AA9335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E71820243C74DB00AA9335 /* LaunchScreen.png in Resources */,
+				04E7180E243B8AA500AA9335 /* LaunchScreen.storyboard in Resources */,
+				04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04E717F4243B8A9E00AA9335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E71811243B8AA500AA9335 /* main.m in Sources */,
+				04E71828243C907F00AA9335 /* Airport.m in Sources */,
+				04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */,
+				04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */,
+				04E7182B243C909400AA9335 /* Country.m in Sources */,
+				04E7182F243C90AB00AA9335 /* City.m in Sources */,
+				04E7181D243C6B8C00AA9335 /* LaunchViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04E7180D243B8AA500AA9335 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04E71812243B8AA500AA9335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		04E71813243B8AA500AA9335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04E71815243B8AA500AA9335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75TFUZ9FZ4;
+				INFOPLIST_FILE = TripPlaner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SamMaKo.TripPlaner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04E71816243B8AA500AA9335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75TFUZ9FZ4;
+				INFOPLIST_FILE = TripPlaner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SamMaKo.TripPlaner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04E717F3243B8A9E00AA9335 /* Build configuration list for PBXProject "TripPlaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E71812243B8AA500AA9335 /* Debug */,
+				04E71813243B8AA500AA9335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04E71814243B8AA500AA9335 /* Build configuration list for PBXNativeTarget "TripPlaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E71815243B8AA500AA9335 /* Debug */,
+				04E71816243B8AA500AA9335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04E71808243B8A9E00AA9335 /* TripPlaner.xcdatamodel */,
+			);
+			currentVersion = 04E71808243B8A9E00AA9335 /* TripPlaner.xcdatamodel */;
+			path = TripPlaner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 04E717F0243B8A9E00AA9335 /* Project object */;
+}
