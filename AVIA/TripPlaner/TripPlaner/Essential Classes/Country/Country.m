@@ -10,4 +10,15 @@
 
 @implementation Country
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary{
+    self = [super init];
+    if(self){
+        _code = [dictionary valueForKey:@"code"];
+        _name = [dictionary valueForKey:@"name"];
+        _currency = [dictionary valueForKey:@"currency"];
+        _translations = [dictionary valueForKey:@"name_translations"];
+    }
+    return self;
+}
+
 @end

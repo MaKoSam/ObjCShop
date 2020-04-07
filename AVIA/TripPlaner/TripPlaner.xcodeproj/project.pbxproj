@@ -71,6 +71,8 @@
 			children = (
 				04E717FB243B8A9E00AA9335 /* AppDelegate.h */,
 				04E717FC243B8A9E00AA9335 /* AppDelegate.m */,
+				04E71831243C99F300AA9335 /* Web Request Managers */,
+				04E71830243C995B00AA9335 /* Data Managers */,
 				04E7180A243B8AA500AA9335 /* Assets.xcassets */,
 				04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */,
 				04E71821243C8FDB00AA9335 /* Essential Classes */,
@@ -143,6 +145,20 @@
 			children = (
 			);
 			path = Flight;
+			sourceTree = "<group>";
+		};
+		04E71830243C995B00AA9335 /* Data Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Managers";
+			sourceTree = "<group>";
+		};
+		04E71831243C99F300AA9335 /* Web Request Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Web Request Managers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
