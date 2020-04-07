@@ -27,6 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    DestinationsRequestManager* manager = [[DestinationsRequestManager alloc] init];
+    [manager requsetAllDestinations:^(){
+        NSLog(@"Success");
+    }];
 #pragma mark - Fetch SettingsMO from CoreData and send to settings page if none
 #pragma mark - Fetch Airport / City / Country Data
 #pragma mark - Fetch Current Location

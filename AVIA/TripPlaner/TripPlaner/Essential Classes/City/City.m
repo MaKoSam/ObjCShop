@@ -18,13 +18,18 @@
         _time_zone = [dictionary valueForKey:@"time_zone"];
         _translations = [dictionary valueForKey:@"name_translations"];
         _country_code = [dictionary valueForKey:@"country_code"];
-        NSDictionary *tmp = [dictionary valueForKey:@"coordinates"];
-        if(tmp && ![tmp isEqual:[NSNull null]]) {
-            NSNumber *lon = [tmp valueForKey:@"lon"];
-            NSNumber *lat = [tmp valueForKey:@"lat"];
-            if (![lon isEqual:[NSNull null]] && ![lat isEqual:[NSNull null]]) {
-                _coordinates = CLLocationCoordinate2DMake([lat doubleValue], [lon doubleValue]);
+        @try {
+            NSDictionary *tmp = [dictionary valueForKey:@"coordinates"];
+            if(tmp && ![tmp isEqual:[NSNull null]]) {
+                NSNumber *lon = [tmp valueForKey:@"lon"];
+                NSNumber *lat = [tmp valueForKey:@"lat"];
+                if (![lon isEqual:[NSNull null]] && ![lat isEqual:[NSNull null]]) {
+                    _coordinates = CLLocationCoordinate2DMake([lat doubleValue], [lon doubleValue]);
+                }
             }
+        }
+        @catch (id anExeption){
+            
         }
     }
     return self;

@@ -19,13 +19,18 @@
         _translations = [dictionary valueForKey:@"name_translations"];
         _country_code = [dictionary valueForKey:@"country_code"];
         _city_code = [dictionary valueForKey:@"city_code"];
-        NSDictionary* tmp = [[NSDictionary alloc] initWithDictionary:[dictionary valueForKey:@"coordinates"]];
-        if(tmp && ![tmp isEqual:[NSNull null]]){
-            NSNumber* lon = [tmp valueForKey:@"lon"];
-            NSNumber* lat = [tmp valueForKey:@"lat"];
-            if(![lon isEqual:[NSNull null]] && ![lat isEqual:[NSNull null]]){
-                _coordinates = CLLocationCoordinate2DMake([lat doubleValue], [lon doubleValue]);
+        @try {
+            NSDictionary* tmp = [[NSDictionary alloc] initWithDictionary:[dictionary valueForKey:@"coordinates"]];
+            if(tmp && ![tmp isEqual:[NSNull null]]){
+                NSNumber* lon = [tmp valueForKey:@"lon"];
+                NSNumber* lat = [tmp valueForKey:@"lat"];
+                if(![lon isEqual:[NSNull null]] && ![lat isEqual:[NSNull null]]){
+                    self.coordinates = CLLocationCoordinate2DMake([lat doubleValue], [lon doubleValue]);
+                }
             }
+        }
+        @catch(id anException) {
+#pragma mark - Caught exception, because Airport has no Coordinates
         }
     }
     return self;

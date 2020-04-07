@@ -17,6 +17,8 @@
 		04E71828243C907F00AA9335 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71827243C907F00AA9335 /* Airport.m */; };
 		04E7182B243C909400AA9335 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7182A243C909400AA9335 /* Country.m */; };
 		04E7182F243C90AB00AA9335 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7182E243C90AB00AA9335 /* City.m */; };
+		04E71835243C9B0200AA9335 /* DestinationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71834243C9B0200AA9335 /* DestinationsManager.m */; };
+		04E71839243CA4D800AA9335 /* DestinationsRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71838243CA4D800AA9335 /* DestinationsRequestManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		04E7182A243C909400AA9335 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
 		04E7182D243C90AB00AA9335 /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
 		04E7182E243C90AB00AA9335 /* City.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		04E71833243C9B0200AA9335 /* DestinationsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DestinationsManager.h; sourceTree = "<group>"; };
+		04E71834243C9B0200AA9335 /* DestinationsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DestinationsManager.m; sourceTree = "<group>"; };
+		04E71837243CA4D800AA9335 /* DestinationsRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DestinationsRequestManager.h; sourceTree = "<group>"; };
+		04E71838243CA4D800AA9335 /* DestinationsRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DestinationsRequestManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 		04E71830243C995B00AA9335 /* Data Managers */ = {
 			isa = PBXGroup;
 			children = (
+				04E71832243C9A9300AA9335 /* Destinations */,
 			);
 			path = "Data Managers";
 			sourceTree = "<group>";
@@ -157,8 +164,27 @@
 		04E71831243C99F300AA9335 /* Web Request Managers */ = {
 			isa = PBXGroup;
 			children = (
+				04E71836243CA49600AA9335 /* Destinations Requests */,
 			);
 			path = "Web Request Managers";
+			sourceTree = "<group>";
+		};
+		04E71832243C9A9300AA9335 /* Destinations */ = {
+			isa = PBXGroup;
+			children = (
+				04E71833243C9B0200AA9335 /* DestinationsManager.h */,
+				04E71834243C9B0200AA9335 /* DestinationsManager.m */,
+			);
+			path = Destinations;
+			sourceTree = "<group>";
+		};
+		04E71836243CA49600AA9335 /* Destinations Requests */ = {
+			isa = PBXGroup;
+			children = (
+				04E71837243CA4D800AA9335 /* DestinationsRequestManager.h */,
+				04E71838243CA4D800AA9335 /* DestinationsRequestManager.m */,
+			);
+			path = "Destinations Requests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,11 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E71835243C9B0200AA9335 /* DestinationsManager.m in Sources */,
 				04E71811243B8AA500AA9335 /* main.m in Sources */,
 				04E71828243C907F00AA9335 /* Airport.m in Sources */,
 				04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */,
 				04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */,
 				04E7182B243C909400AA9335 /* Country.m in Sources */,
+				04E71839243CA4D800AA9335 /* DestinationsRequestManager.m in Sources */,
 				04E7182F243C90AB00AA9335 /* City.m in Sources */,
 				04E7181D243C6B8C00AA9335 /* LaunchViewController.m in Sources */,
 			);
@@ -372,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75TFUZ9FZ4;
 				INFOPLIST_FILE = TripPlaner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75TFUZ9FZ4;
 				INFOPLIST_FILE = TripPlaner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
