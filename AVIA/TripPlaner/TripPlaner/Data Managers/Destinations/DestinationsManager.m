@@ -52,11 +52,10 @@
     if([results count] != 0){
         return results;
     } else {
-        [results addObject:DestinationsManager.sharedInstance.airports.firstObject];
+        [results addObject:[DestinationsManager sharedInstance].airports.firstObject];
         return results;
     }
 }
-
 
 
 
