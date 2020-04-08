@@ -142,8 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				04E717FB243B8A9E00AA9335 /* AppDelegate.h */,
-				0403B0FC243DC0B000001E00 /* Session & Settings */,
 				04E717FC243B8A9E00AA9335 /* AppDelegate.m */,
+				0403B0FC243DC0B000001E00 /* Session & Settings */,
 				04E71831243C99F300AA9335 /* Web Request Managers */,
 				04E71830243C995B00AA9335 /* Data Managers */,
 				04E7180A243B8AA500AA9335 /* Assets.xcassets */,

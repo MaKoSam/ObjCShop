@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DestinationsRequestManager.h"
 #import "SearchViewController.h"
+#import "ActiveSession.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

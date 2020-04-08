@@ -44,9 +44,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [ActiveSession.sharedInstance.settings fetchSettingsFromCache];
     
     dispatch_queue_t mainQueue = dispatch_get_main_queue();
-    
     DestinationsRequestManager* manager = [[DestinationsRequestManager alloc] init];
     [manager requsetAllDestinations:^(){
         dispatch_async(mainQueue, ^(){

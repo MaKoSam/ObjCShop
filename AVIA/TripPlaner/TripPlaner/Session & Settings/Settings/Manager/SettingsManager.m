@@ -18,15 +18,40 @@
     return self;
 }
 
--(BOOL) fetchSettingsFromCache {
-    //Try to fetch data from file manager
-    //Return YES - if success
-    //Return NO - if fail
-    return NO;
+-(void) fetchSettingsFromCache {
+    NSArray* path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString* cacheDirectory = [path objectAtIndex:0];
+    NSString* settingCacheFilePath = [cacheDirectory stringByAppendingString:@"settings.txt"];
+    @try {
+        NSError* error;
+        NSData* settingsData = [[NSFileManager defaultManager] contentsAtPath:settingCacheFilePath];
+        NSDictionary* settingsDictionary = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSDictionary self] fromData:settingsData error:&error];
+            [self updateSettings:[settingsDictionary valueForKey:@"name"] withLanguage:[settingsDictionary valueForKey:@"language"] withCurrency:[settingsDictionary valueForKey:@"currency"]];
+    }
+    @catch(id anExeption) {
+        NSLog(@"Warning. Failed downloading settings data from Cache.\n");
+    }
 }
 
 -(void) saveSettingsToCache {
-    //Try to save data to file manager
+    dispatch_queue_t backgroundPriorityQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_async(backgroundPriorityQueue, ^(){
+        NSArray* path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+        NSString* cacheDirectory = [path objectAtIndex:0];
+        NSString* settingCacheFilePath = [cacheDirectory stringByAppendingString:@"settings.txt"];
+        @try{
+            NSMutableDictionary*settingsDictionary = [[NSMutableDictionary alloc] init];
+            [settingsDictionary setValue:self->_activeSettings.user_name forKey:@"name"];
+            [settingsDictionary setValue:self->_activeSettings.language forKey:@"language"];
+            [settingsDictionary setValue:self->_activeSettings.currency forKey:@"currency"];
+            NSError *error;
+            NSData* settingsData = [NSKeyedArchiver archivedDataWithRootObject:settingsDictionary requiringSecureCoding:NO error: &error];
+            [settingsData writeToFile:settingCacheFilePath atomically:YES];
+        }
+        @catch (id anException){
+            NSLog(@"Warning.Failed to save settings data to Caches.\n");
+        }
+    });
 }
 
 -(void) updateSettings:(NSString *)user withLanguage:(NSString *)lang withCurrency:(NSString *)curr {

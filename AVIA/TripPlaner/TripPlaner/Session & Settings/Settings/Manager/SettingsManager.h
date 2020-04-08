@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype) initDefault;
 
--(BOOL)fetchSettingsFromCache;
+-(void)fetchSettingsFromCache;
 -(void)saveSettingsToCache;
 -(void)updateSettings:(NSString*)user withLanguage:(NSString*)lang withCurrency:(NSString*)curr;
 
