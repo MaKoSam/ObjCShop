@@ -21,6 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if(!self.Sercher){
+        _Sercher = [[SearchEngine alloc] init];
+    }
+    
+    NSArray* results = [[NSArray alloc] initWithArray: [_Sercher findPlaceByKey:@"Вашингтон"]];
+    
+    if([results count] != 0){
+        for(Airport* items in results){
+            NSLog(@"%@ - %@\n", items.name, items.code);
+        }
+    } else {
+        NSLog(@"Not found\n");
+    }
+    
     // Do any additional setup after loading the view.
 }
 

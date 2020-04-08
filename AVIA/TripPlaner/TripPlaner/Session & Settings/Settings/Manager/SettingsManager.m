@@ -28,8 +28,8 @@
         NSDictionary* settingsDictionary = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSDictionary self] fromData:settingsData error:&error];
             [self updateSettings:[settingsDictionary valueForKey:@"name"] withLanguage:[settingsDictionary valueForKey:@"language"] withCurrency:[settingsDictionary valueForKey:@"currency"]];
     }
-    @catch(id anExeption) {
-        NSLog(@"Warning. Failed downloading settings data from Cache.\n");
+    @catch(id anException) {
+        NSLog(@"Warning.Failed downloading settings data from Cache.\n");
     }
 }
 
@@ -62,7 +62,6 @@
     _activeSettings.language = lang;
     _activeSettings.currency = curr;
     
-    //Dispatch Background queue and save sets to cache
     [self saveSettingsToCache];
 }
 

@@ -44,8 +44,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Try to fetch UsetSettings
     [ActiveSession.sharedInstance.settings fetchSettingsFromCache];
     
+    
+    //Try to fetch Destinations Data
     dispatch_queue_t mainQueue = dispatch_get_main_queue();
     DestinationsRequestManager* manager = [[DestinationsRequestManager alloc] init];
     [manager requsetAllDestinations:^(){
@@ -54,6 +58,8 @@
             [self launchNormal];
         });
     }];
+    
+    
 #pragma mark - Fetch SettingsMO from CoreData and send to settings page if none
 #pragma mark - Fetch Airport / City / Country Data
 #pragma mark - Fetch Current Location

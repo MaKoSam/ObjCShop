@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)fetchSettingsFromCache;
 -(void)saveSettingsToCache;
--(void)updateSettings:(NSString*)user withLanguage:(NSString*)lang withCurrency:(NSString*)curr;
 
+-(void)updateSettings:(NSString*)user withLanguage:(NSString*)lang withCurrency:(NSString*)curr;
 
 @end
 

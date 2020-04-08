@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DestinationsManager.h"
+#import "SearchEngine.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchViewController : UIViewController
+
+@property (nonatomic, strong) SearchEngine* Sercher;
 
 @end
 
