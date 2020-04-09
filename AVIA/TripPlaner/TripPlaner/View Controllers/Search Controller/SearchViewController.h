@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SearchEngine.h"
+#import "SearchRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchViewController : UIViewController
 
-@property (nonatomic, strong) SearchEngine* Sercher;
+@property (nonatomic, strong) SearchRequest* searchRequest;
+
+@property (nonatomic, strong) UIImageView* SearchBackgroundView;
 
 @end
 
