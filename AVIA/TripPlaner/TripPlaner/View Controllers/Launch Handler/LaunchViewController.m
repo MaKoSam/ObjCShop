@@ -70,6 +70,7 @@
     dispatch_queue_t mainQueue = dispatch_get_main_queue();
     SearchViewController* searchController = [[SearchViewController alloc] init];
     dispatch_async(mainQueue, ^(){
+        [self->_indicator stopAnimating];
         [self.navigationController pushViewController:searchController animated:YES];
     });
 }

@@ -69,4 +69,22 @@
     return result;
 }
 
+-(NSString*) findCityByKeyReturnName:(NSString*)key{
+    for(City* items in [DestinationsManager sharedInstance].cities){
+        if([items.code isEqual:key]){
+            return items.name;
+        }
+    }
+    return @"NULL";
+}
+
+-(NSString*) findCountryByKeyReturnName:(NSString*)key{
+    for(Country* items in [DestinationsManager sharedInstance].countries){
+        if([items.code isEqual:key]){
+            return items.name;
+        }
+    }
+    return @"NULL";
+}
+
 @end

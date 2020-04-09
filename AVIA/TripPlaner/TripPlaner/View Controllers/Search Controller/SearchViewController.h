@@ -7,15 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SearchRequest.h"
+#import "PlaceViewController.h"
+#import "ActiveSession.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchViewController : UIViewController
 
-@property (nonatomic, strong) SearchRequest* searchRequest;
+@property (nonatomic, strong) UIView* PlacesView;
+@property (nonatomic, strong) UIButton* originSelect;
+@property (nonatomic, strong) UIButton* destinationSelect;
 
-@property (nonatomic, strong) UIImageView* SearchBackgroundView;
+@property (nonatomic, strong) UIView* AdditionalView;
+@property (nonatomic, strong) UIButton* datePickerButton;
+@property (nonatomic, strong) UIButton* searchButton;
+@property (nonatomic, strong) UISegmentedControl* typePickerControl;
+
+-(void)setUpPlacesView;
+-(void)setUPSelectors;
+-(void)setUpLabels;
+
 
 @end
 

@@ -51,7 +51,10 @@
         case 3: //Airport
             for(NSDictionary* items in json){
                 Airport* new = [[Airport alloc] initWithDictionary: items];
-                [DestinationsManager.sharedInstance.airports addObject: new];
+                //Filtering Non-Existing or Non-Flightable
+                if(![new.name isEqual:[NSNull null]] && ![new.code isEqual:[NSNull null]] && [new.flightable isEqual:@"YES"]){
+                    [DestinationsManager.sharedInstance.airports addObject: new];
+                }
             }
             break;
         default:

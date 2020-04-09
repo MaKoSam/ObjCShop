@@ -20,6 +20,11 @@
         _country_code = [dictionary valueForKey:@"country_code"];
         _city_code = [dictionary valueForKey:@"city_code"];
         @try {
+            if([[dictionary valueForKey:@"flightable"] isEqual: @1]){
+                _flightable = @"YES";
+            } else {
+                _flightable = @"NO";
+            }
             NSDictionary* tmp = [[NSDictionary alloc] initWithDictionary:[dictionary valueForKey:@"coordinates"]];
             if(tmp && ![tmp isEqual:[NSNull null]]){
                 NSNumber* lon = [tmp valueForKey:@"lon"];
@@ -30,7 +35,8 @@
             }
         }
         @catch(id anException) {
-#pragma mark - Caught exception, because Airport has no Coordinates
+            #pragma mark - Caught exception, because Airport has no Coordinates
+//            NSLog(@"%@Warning. Caught Excepting trying execute Airport from dictionary.\n", _code);
         }
     }
     return self;

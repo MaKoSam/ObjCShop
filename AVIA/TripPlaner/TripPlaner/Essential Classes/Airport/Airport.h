@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* code;
 @property (nonatomic, strong) NSDictionary* translations;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
+@property (nonatomic, strong) NSString* flightable;
 
 -(instancetype) initWithDictionary:(NSDictionary*) dictionary;
 

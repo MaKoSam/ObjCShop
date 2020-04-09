@@ -12,7 +12,9 @@
 
 -(instancetype) initDefault{
     self = [super init];
-    _currency = [ActiveSession sharedInstance].settings.activeSettings.currency;
+    _origin = @"notset";
+    _destination = @"notset";
+    _currency = @"rub";
     _period_type = @"month";
     _one_way = @"false";
     _trip_duration = @"1";

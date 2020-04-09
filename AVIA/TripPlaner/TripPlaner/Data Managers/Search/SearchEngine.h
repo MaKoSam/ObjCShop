@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSArray*) findCityByKey:(NSString*)key orCountryCode:(NSString*) countryCode;
 -(NSArray*) findAirpotByKey:(NSString*)key orCityCode:(NSArray*) cityCode;
 
+-(NSString*) findCountryByKeyReturnName:(NSString*)key;
+-(NSString*) findCityByKeyReturnName:(NSString*)key;
+
 @end
 
 NS_ASSUME_NONNULL_END

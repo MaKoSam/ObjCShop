@@ -24,6 +24,7 @@
     if(self){
         self.apiToken = @"92f6997c76c68140e274c5aed1bd7885";
         self.settings = [[SettingsManager alloc] initDefault];
+        self.search = [[SearchRequest alloc] initDefault];
     }
     return self;
 }
