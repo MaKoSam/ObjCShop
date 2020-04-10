@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PlaceViewController.h"
+#import "LoadingViewController.h"
 #import "DateViewController.h"
 #import "ActiveSession.h"
 

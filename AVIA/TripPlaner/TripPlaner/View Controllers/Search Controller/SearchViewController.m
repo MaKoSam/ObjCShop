@@ -31,6 +31,7 @@
     [self setUpLabels];
     [self setUpPickerView];
     [self setUpPickers];
+    [self setUpButton];
 }
 
 - (void)viewDidLoad {
@@ -38,6 +39,27 @@
     [self.navigationController setNavigationBarHidden:YES];
     
 }
+
+-(void) StartSearching:(id)sender{
+    if([ActiveSession sharedInstance].search.readyToSearch){
+        LoadingViewController* newController = [[LoadingViewController alloc] init];
+        [self.navigationController pushViewController:newController animated:YES];
+    } else {
+        [self performAlert];
+    }
+}
+
+-(void)performAlert{
+    UIAlertController* alert = [[UIAlertController alloc] init];
+    [alert setTitle:@"Ошибка"];
+    [alert setMessage:@"Не заполнено одно из необходимых полей."];
+    UIAlertAction* alertAction = [UIAlertAction actionWithTitle:@"Ок" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+        
+    }];
+    [alert addAction:alertAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 -(void) typeChanged:(id)sender{
     if([_typePickerControl selectedSegmentIndex] == 0){
         [[ActiveSession sharedInstance].search setOne_way:@"true"];
@@ -369,8 +391,6 @@
     
     [_typePickerControl addTarget:self action:@selector(typeChanged:) forControlEvents:UIControlEventValueChanged];
     
-    NSLog(@"%@", [_typePickerControl titleTextAttributesForState:UIControlStateNormal]);
-    
     [[_datePickerButton layer] setCornerRadius:5.0];
     [[_datePickerButton layer] setBorderWidth:2.0];
     [[_datePickerButton layer] setBorderColor:_mainTheme.CGColor];
@@ -449,6 +469,55 @@
     
     [self.view addConstraints:@[dateTop, dateLead, dateTrail, dateBottom]];
     
+}
+
+-(void) setUpButton{
+    if(!self.searchButton){
+        _searchButton = [[UIButton alloc] init];
+        _searchButton.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    [_searchButton setTitle:@"Найти" forState:UIControlStateNormal];
+    [[_searchButton layer] setCornerRadius:15.0];
+    [_searchButton setTitleColor:_mainTheme forState:UIControlStateNormal];
+    [_searchButton setBackgroundColor:[UIColor whiteColor]];
+    [_searchButton addTarget:self action:@selector(StartSearching:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_searchButton];
+    
+    NSLayoutConstraint* buttonLead = [NSLayoutConstraint
+                                      constraintWithItem:_searchButton
+                                      attribute:NSLayoutAttributeLeading
+                                      relatedBy:NSLayoutRelationEqual
+                                      toItem:self.view
+                                      attribute:NSLayoutAttributeLeading
+                                      multiplier:1.0
+                                      constant:30.0];
+    NSLayoutConstraint* buttonTrail = [NSLayoutConstraint
+                                       constraintWithItem:_searchButton
+                                       attribute:NSLayoutAttributeTrailing
+                                       relatedBy:NSLayoutRelationEqual
+                                       toItem:self.view
+                                       attribute:NSLayoutAttributeTrailing
+                                       multiplier:1.0
+                                       constant:-30.0];
+    NSLayoutConstraint* buttonBottom = [NSLayoutConstraint
+                                        constraintWithItem:_searchButton
+                                        attribute:NSLayoutAttributeBottom
+                                        relatedBy:NSLayoutRelationEqual
+                                        toItem:self.view
+                                        attribute:NSLayoutAttributeBottom
+                                        multiplier:1.0
+                                        constant:-30.0];
+    NSLayoutConstraint* buttonHeight = [NSLayoutConstraint
+                                        constraintWithItem:_searchButton
+                                        attribute:NSLayoutAttributeHeight
+                                        relatedBy:NSLayoutRelationEqual
+                                        toItem:nil
+                                        attribute:NSLayoutAttributeNotAnAttribute
+                                        multiplier:1.0
+                                        constant:60.0];
+    
+    [self.view addConstraints:@[buttonLead, buttonTrail, buttonBottom, buttonHeight]];
 }
 
 @end

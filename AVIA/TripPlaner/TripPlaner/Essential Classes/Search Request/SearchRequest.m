@@ -22,4 +22,11 @@
     return self;
 }
 
+-(BOOL) readyToSearch{
+    if(![_origin isEqualToString:@"notset"] && ![_destination isEqualToString:@"notset"] && ![_beginning_of_period isEqualToString:@"notset"]){
+        return YES;
+    }
+    return NO;
+}
+
 @end

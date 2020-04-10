@@ -17,6 +17,7 @@
 		042C43A4243F4E8C00E7B5B3 /* PlaceTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C43A3243F4E8C00E7B5B3 /* PlaceTableCell.m */; };
 		045F2249244055E600A470E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F2248244055E600A470E2 /* MainViewController.m */; };
 		045F224D244073E600A470E2 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F224C244073E600A470E2 /* DateViewController.m */; };
+		047273E92440BFE800908B78 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047273E82440BFE800908B78 /* LoadingViewController.m */; };
 		04872210243CE9960028992D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487220F243CE9960028992D /* SearchViewController.m */; };
 		04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E717FC243B8A9E00AA9335 /* AppDelegate.m */; };
 		04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */; };
@@ -52,6 +53,8 @@
 		045F2248244055E600A470E2 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		045F224B244073E600A470E2 /* DateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
 		045F224C244073E600A470E2 /* DateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
+		047273E72440BFE800908B78 /* LoadingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
+		047273E82440BFE800908B78 /* LoadingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
 		0487220E243CE9960028992D /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		0487220F243CE9960028992D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		04E717F8243B8A9E00AA9335 /* TripPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +157,7 @@
 		042C436F243F09C400E7B5B3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				047273E52440BFC000908B78 /* Loading Controller */,
 				04E71817243C6AB600AA9335 /* Launch Handler */,
 				045F2246244055A300A470E2 /* Main */,
 				0487220D243CE9030028992D /* Search Controller */,
@@ -198,6 +202,15 @@
 				045F224C244073E600A470E2 /* DateViewController.m */,
 			);
 			path = "Dates Controller";
+			sourceTree = "<group>";
+		};
+		047273E52440BFC000908B78 /* Loading Controller */ = {
+			isa = PBXGroup;
+			children = (
+				047273E72440BFE800908B78 /* LoadingViewController.h */,
+				047273E82440BFE800908B78 /* LoadingViewController.m */,
+			);
+			path = "Loading Controller";
 			sourceTree = "<group>";
 		};
 		0487220D243CE9030028992D /* Search Controller */ = {
@@ -422,6 +435,7 @@
 				042C43A0243F4BC000E7B5B3 /* PlaceViewController.m in Sources */,
 				04E71828243C907F00AA9335 /* Airport.m in Sources */,
 				04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */,
+				047273E92440BFE800908B78 /* LoadingViewController.m in Sources */,
 				04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */,
 				04E7182B243C909400AA9335 /* Country.m in Sources */,
 				04E71839243CA4D800AA9335 /* DestinationsRequestManager.m in Sources */,
