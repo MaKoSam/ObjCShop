@@ -15,6 +15,7 @@
     _origin = @"notset";
     _destination = @"notset";
     _currency = @"rub";
+    _beginning_of_period = @"notset";
     _period_type = @"month";
     _one_way = @"false";
     _trip_duration = @"1";

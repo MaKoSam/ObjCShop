@@ -11,8 +11,8 @@
 @interface SearchViewController ()
 
 @property (nonatomic, strong) UIColor* mainTheme;
-@property (nonatomic, strong) UILabel* fromLabel;
-@property (nonatomic, strong) UILabel* toLabel;
+@property (nonatomic, strong) UILabel* fromLabel; //Labels
+@property (nonatomic, strong) UILabel* toLabel; //Labels
 
 @end
 
@@ -29,12 +29,21 @@
     [self setUpPlacesView];
     [self setUpSelectors];
     [self setUpLabels];
+    [self setUpPickerView];
+    [self setUpPickers];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     
+}
+-(void) typeChanged:(id)sender{
+    if([_typePickerControl selectedSegmentIndex] == 0){
+        [[ActiveSession sharedInstance].search setOne_way:@"true"];
+    } else {
+        [[ActiveSession sharedInstance].search setOne_way:@"false"];
+    }
 }
 
 -(void) selectOrigin:(id)sender{
@@ -44,6 +53,18 @@
 
 -(void) selectDestination:(id)sender{
     PlaceViewController* newController = [[PlaceViewController alloc] initSearchOfType:@"dest"];
+    [self.navigationController pushViewController: newController animated:YES];
+}
+
+-(void) selectDate:(id)sender{
+    NSString* type = [[NSString alloc] init];
+    if((long)[_typePickerControl selectedSegmentIndex] == (long)0){
+        type = @"oneway";
+    } else {
+        type = @"return";
+    }
+    
+    DateViewController* newController = [[DateViewController alloc] initWithTripType: type];
     [self.navigationController pushViewController: newController animated:YES];
 }
 
@@ -250,7 +271,7 @@
                                     toItem:self.view
                                     attribute:NSLayoutAttributeTop
                                     multiplier:1.0
-                                    constant:50.0];
+                                    constant:75.0];
 
     NSLayoutConstraint* placeHeight = [NSLayoutConstraint
                                        constraintWithItem:_PlacesView
@@ -267,7 +288,7 @@
                                         toItem:self.view
                                         attribute:NSLayoutAttributeLeading
                                         multiplier:1.0
-                                        constant:50.0];
+                                        constant:30.0];
     NSLayoutConstraint* placeTrailing = [NSLayoutConstraint
                                          constraintWithItem:_PlacesView
                                          attribute:NSLayoutAttributeTrailing
@@ -275,9 +296,159 @@
                                          toItem:self.view
                                          attribute:NSLayoutAttributeTrailing
                                          multiplier:1.0
-                                         constant:-50.0];
+                                         constant:-30.0];
     
     [self.view addConstraints:@[placeLeading, placeTrailing, placeTop, placeHeight]];
+}
+
+-(void)setUpPickerView{
+    if(!self.PickerView){
+        _PickerView = [[UIView alloc] init];
+        _PickerView.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    [_PickerView setBackgroundColor:[UIColor whiteColor]];
+    [[_PickerView layer] setCornerRadius:15.0];
+    [self.view addSubview: _PickerView];
+    
+    NSLayoutConstraint* pickerTop = [NSLayoutConstraint
+                                     constraintWithItem:_PickerView
+                                     attribute:NSLayoutAttributeTop
+                                     relatedBy:NSLayoutRelationEqual
+                                     toItem:_PlacesView
+                                     attribute:NSLayoutAttributeBottom
+                                     multiplier:1.0
+                                     constant:20.0];
+    NSLayoutConstraint* pickerLead = [NSLayoutConstraint
+                                      constraintWithItem:_PickerView
+                                      attribute:NSLayoutAttributeLeading
+                                      relatedBy:NSLayoutRelationEqual
+                                      toItem:self.view
+                                      attribute:NSLayoutAttributeLeading
+                                      multiplier:1.0
+                                      constant:30.0];
+    NSLayoutConstraint* pickerTrail = [NSLayoutConstraint
+                                       constraintWithItem:_PickerView
+                                       attribute:NSLayoutAttributeTrailing
+                                       relatedBy:NSLayoutRelationEqual
+                                       toItem:self.view
+                                       attribute:NSLayoutAttributeTrailing
+                                       multiplier:1.0
+                                       constant:-30.0];
+    NSLayoutConstraint* pickerHeight = [NSLayoutConstraint
+                                        constraintWithItem:_PickerView
+                                        attribute:NSLayoutAttributeHeight
+                                        relatedBy:NSLayoutRelationEqual
+                                        toItem:nil
+                                        attribute:NSLayoutAttributeNotAnAttribute
+                                        multiplier:1.0
+                                        constant:160.0];
+    [self.view addConstraints:@[pickerTop, pickerLead, pickerTrail, pickerHeight]];
+}
+
+-(void)setUpPickers{
+    if (!self.typePickerControl) {
+        _typePickerControl = [[UISegmentedControl alloc] initWithItems: @[@"В одну сторону", @"Tуда - Обратно"]];
+        _typePickerControl.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    if(!self.datePickerButton) {
+        _datePickerButton = [[UIButton alloc] init];
+        _datePickerButton.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    if([[ActiveSession sharedInstance].search.beginning_of_period isEqualToString:@"notset"]){
+        [_datePickerButton setTitle:@"Выберите даты поездки" forState:UIControlStateNormal];
+    } else {
+        [_datePickerButton setTitle:[ActiveSession sharedInstance].search.beginning_of_period forState:UIControlStateNormal];
+    }
+    [_typePickerControl setSelectedSegmentTintColor:_mainTheme];
+    
+    if([[ActiveSession sharedInstance].search.one_way isEqualToString:@"false"]){
+        [_typePickerControl setSelectedSegmentIndex:1];
+    } else {
+        [_typePickerControl setSelectedSegmentIndex:0];
+    }
+    
+    [_typePickerControl addTarget:self action:@selector(typeChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    NSLog(@"%@", [_typePickerControl titleTextAttributesForState:UIControlStateNormal]);
+    
+    [[_datePickerButton layer] setCornerRadius:5.0];
+    [[_datePickerButton layer] setBorderWidth:2.0];
+    [[_datePickerButton layer] setBorderColor:_mainTheme.CGColor];
+    [_datePickerButton setTitleColor:_mainTheme forState:UIControlStateNormal];
+    [_datePickerButton addTarget:self action:@selector(selectDate:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_typePickerControl];
+    [self.view addSubview:_datePickerButton];
+    
+    NSLayoutConstraint* typeTop = [NSLayoutConstraint
+                                   constraintWithItem:_typePickerControl
+                                   attribute:NSLayoutAttributeTop
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:_PickerView
+                                   attribute:NSLayoutAttributeTop
+                                   multiplier:1.0
+                                   constant:20.0];
+    NSLayoutConstraint* typeLead = [NSLayoutConstraint
+                                    constraintWithItem:_typePickerControl
+                                    attribute:NSLayoutAttributeLeading
+                                    relatedBy:NSLayoutRelationEqual
+                                    toItem:_PickerView
+                                    attribute:NSLayoutAttributeLeading
+                                    multiplier:1.0
+                                    constant:20.0];
+    NSLayoutConstraint* typeTrail = [NSLayoutConstraint
+                                     constraintWithItem:_typePickerControl
+                                     attribute:NSLayoutAttributeTrailing
+                                     relatedBy:NSLayoutRelationEqual
+                                     toItem:_PickerView
+                                     attribute:NSLayoutAttributeTrailing
+                                     multiplier:1.0
+                                     constant:-20.0];
+    NSLayoutConstraint* typeHeight = [NSLayoutConstraint
+                                      constraintWithItem:_typePickerControl
+                                      attribute:NSLayoutAttributeHeight
+                                      relatedBy:NSLayoutRelationEqual
+                                      toItem:nil
+                                      attribute:NSLayoutAttributeNotAnAttribute
+                                      multiplier:1.0
+                                      constant:50.0];
+    [self.view addConstraints:@[typeTop, typeLead, typeTrail, typeHeight]];
+    
+    NSLayoutConstraint* dateTop = [NSLayoutConstraint
+                                   constraintWithItem:_datePickerButton
+                                   attribute:NSLayoutAttributeTop
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:_typePickerControl
+                                   attribute:NSLayoutAttributeBottom
+                                   multiplier:1.0
+                                   constant:20.0];
+    NSLayoutConstraint* dateLead = [NSLayoutConstraint
+                                       constraintWithItem:_datePickerButton
+                                       attribute:NSLayoutAttributeLeading
+                                       relatedBy:NSLayoutRelationEqual
+                                       toItem:_PickerView
+                                       attribute:NSLayoutAttributeLeading
+                                       multiplier:1.0
+                                       constant:20.0];
+    NSLayoutConstraint* dateTrail = [NSLayoutConstraint
+                                        constraintWithItem:_datePickerButton
+                                        attribute:NSLayoutAttributeTrailing
+                                        relatedBy:NSLayoutRelationEqual
+                                        toItem:_PickerView
+                                        attribute:NSLayoutAttributeTrailing
+                                        multiplier:1.0
+                                        constant:-20.0];
+    NSLayoutConstraint* dateBottom = [NSLayoutConstraint
+                                      constraintWithItem:_datePickerButton
+                                      attribute:NSLayoutAttributeBottom
+                                      relatedBy:NSLayoutRelationEqual
+                                      toItem:_PickerView
+                                      attribute:NSLayoutAttributeBottom
+                                      multiplier:1.0
+                                      constant:-20.0];
+    
+    [self.view addConstraints:@[dateTop, dateLead, dateTrail, dateBottom]];
+    
 }
 
 @end
