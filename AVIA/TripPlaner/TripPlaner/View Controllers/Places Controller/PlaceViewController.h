@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PlaceViewController : UIViewController <UITableViewDataSource, UISearchResultsUpdating>
+@interface PlaceViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating>
 
 @property (nonatomic, strong) UITableView* PlaceTable;
 @property (nonatomic, strong) UISearchController* searchController;

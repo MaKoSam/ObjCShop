@@ -36,6 +36,8 @@
     
     //Setup TableView
     _PlaceTable.dataSource = self;
+    _PlaceTable.delegate = self;
+    
     [_PlaceTable setRowHeight:60.0];
     [_PlaceTable registerClass:[PlaceTableCell self] forCellReuseIdentifier:@"PlaceCell"];
     
@@ -72,7 +74,7 @@
     PlaceTableCell* newCell = [_PlaceTable dequeueReusableCellWithIdentifier:@"PlaceCell"];
     if(!newCell){
         newCell = [[PlaceTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"place"];
-        newCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        newCell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }
     if([self isFiltering]){
         [newCell setAirport:[_SortedPlaces objectAtIndex:[indexPath row]]];
@@ -89,13 +91,13 @@
     } else {
         selectedPlace = [_Places objectAtIndex:[indexPath row]];
     }
-    
+
     if([self.searchType isEqualToString:@"origin"]){
         [ActiveSession sharedInstance].search.origin = selectedPlace.code;
     } else if([self.searchType isEqualToString:@"dest"]){
         [ActiveSession sharedInstance].search.destination = selectedPlace.code;
     }
-    
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 
