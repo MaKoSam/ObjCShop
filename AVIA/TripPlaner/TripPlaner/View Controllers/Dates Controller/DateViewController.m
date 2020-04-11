@@ -65,6 +65,12 @@
 -(void)doneDepartureAction:(id)sender{
     [_Departure setText:[self dateDepartureFormatter]];
     [[ActiveSession sharedInstance].search setBeginning_of_period:[self dateDepartureFormatter]];
+    [[ActiveSession sharedInstance].search setBeginPeriod:[self dateForRequest]];
+}
+-(NSString*)dateForRequest{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM"];
+    return [[NSString alloc] initWithString: [formatter stringFromDate:_dateDeparturePicker.date]];
 }
 
 -(void)doneReturnAction:(id)sender{

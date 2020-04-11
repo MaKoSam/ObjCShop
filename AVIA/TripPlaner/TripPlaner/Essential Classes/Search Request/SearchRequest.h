@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* period_type; // = month
 @property (nonatomic, strong) NSString* one_way;//BOOL'true' or 'false'
 @property (nonatomic, strong) NSString* trip_duration; //Int
+@property (nonatomic, strong) NSString* BeginPeriod; //For formatting
 
 -(instancetype) initDefault;
 

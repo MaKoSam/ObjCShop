@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor greenColor]];
+    FlightRequest* Requester = [[FlightRequest alloc] init];
+    [Requester flightsFromSearchRequest:[ActiveSession sharedInstance].search];
+    
     // Do any additional setup after loading the view.
 }
 

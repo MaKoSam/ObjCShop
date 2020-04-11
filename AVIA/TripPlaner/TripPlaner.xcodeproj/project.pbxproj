@@ -18,6 +18,7 @@
 		045F2249244055E600A470E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F2248244055E600A470E2 /* MainViewController.m */; };
 		045F224D244073E600A470E2 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F224C244073E600A470E2 /* DateViewController.m */; };
 		047273E92440BFE800908B78 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047273E82440BFE800908B78 /* LoadingViewController.m */; };
+		047273ED2440C62E00908B78 /* FlightRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047273EC2440C62E00908B78 /* FlightRequest.m */; };
 		04872210243CE9960028992D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487220F243CE9960028992D /* SearchViewController.m */; };
 		04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E717FC243B8A9E00AA9335 /* AppDelegate.m */; };
 		04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */; };
@@ -55,6 +56,8 @@
 		045F224C244073E600A470E2 /* DateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		047273E72440BFE800908B78 /* LoadingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		047273E82440BFE800908B78 /* LoadingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
+		047273EB2440C62E00908B78 /* FlightRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightRequest.h; sourceTree = "<group>"; };
+		047273EC2440C62E00908B78 /* FlightRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightRequest.m; sourceTree = "<group>"; };
 		0487220E243CE9960028992D /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		0487220F243CE9960028992D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		04E717F8243B8A9E00AA9335 /* TripPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +216,15 @@
 			path = "Loading Controller";
 			sourceTree = "<group>";
 		};
+		047273EA2440C5F600908B78 /* Flights Requests */ = {
+			isa = PBXGroup;
+			children = (
+				047273EB2440C62E00908B78 /* FlightRequest.h */,
+				047273EC2440C62E00908B78 /* FlightRequest.m */,
+			);
+			path = "Flights Requests";
+			sourceTree = "<group>";
+		};
 		0487220D243CE9030028992D /* Search Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +346,7 @@
 		04E71831243C99F300AA9335 /* Web Request Managers */ = {
 			isa = PBXGroup;
 			children = (
+				047273EA2440C5F600908B78 /* Flights Requests */,
 				04E71836243CA49600AA9335 /* Destinations Requests */,
 			);
 			path = "Web Request Managers";
@@ -429,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0403B100243DC0F000001E00 /* ActiveSession.m in Sources */,
+				047273ED2440C62E00908B78 /* FlightRequest.m in Sources */,
 				04E71835243C9B0200AA9335 /* DestinationsManager.m in Sources */,
 				04E71811243B8AA500AA9335 /* main.m in Sources */,
 				04872210243CE9960028992D /* SearchViewController.m in Sources */,
