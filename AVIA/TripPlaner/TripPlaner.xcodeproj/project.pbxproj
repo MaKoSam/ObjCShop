@@ -20,8 +20,10 @@
 		047273E92440BFE800908B78 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047273E82440BFE800908B78 /* LoadingViewController.m */; };
 		047273ED2440C62E00908B78 /* FlightRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047273EC2440C62E00908B78 /* FlightRequest.m */; };
 		04872210243CE9960028992D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487220F243CE9960028992D /* SearchViewController.m */; };
+		048C5B322444B9E200A0D408 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B312444B9E200A0D408 /* Flight.m */; };
+		048C5B362444BD3000A0D408 /* TicketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B352444BD3000A0D408 /* TicketManager.m */; };
+		048C5B3A2444C1C900A0D408 /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B392444C1C900A0D408 /* PresentViewController.m */; };
 		04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E717FC243B8A9E00AA9335 /* AppDelegate.m */; };
-		04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */; };
 		04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180A243B8AA500AA9335 /* Assets.xcassets */; };
 		04E7180E243B8AA500AA9335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */; };
 		04E71811243B8AA500AA9335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71810243B8AA500AA9335 /* main.m */; };
@@ -60,10 +62,15 @@
 		047273EC2440C62E00908B78 /* FlightRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightRequest.m; sourceTree = "<group>"; };
 		0487220E243CE9960028992D /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		0487220F243CE9960028992D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		048C5B302444B9E200A0D408 /* Flight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
+		048C5B312444B9E200A0D408 /* Flight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
+		048C5B342444BD3000A0D408 /* TicketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketManager.h; sourceTree = "<group>"; };
+		048C5B352444BD3000A0D408 /* TicketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketManager.m; sourceTree = "<group>"; };
+		048C5B382444C1C900A0D408 /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
+		048C5B392444C1C900A0D408 /* PresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
 		04E717F8243B8A9E00AA9335 /* TripPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E717FB243B8A9E00AA9335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04E717FC243B8A9E00AA9335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04E71808243B8A9E00AA9335 /* TripPlaner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripPlaner.xcdatamodel; sourceTree = "<group>"; };
 		04E7180A243B8AA500AA9335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04E7180D243B8AA500AA9335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04E7180F243B8AA500AA9335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +167,7 @@
 		042C436F243F09C400E7B5B3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				048C5B372444C1AF00A0D408 /* Presenting Controller */,
 				047273E52440BFC000908B78 /* Loading Controller */,
 				04E71817243C6AB600AA9335 /* Launch Handler */,
 				045F2246244055A300A470E2 /* Main */,
@@ -234,6 +242,33 @@
 			path = "Search Controller";
 			sourceTree = "<group>";
 		};
+		048C5B2F2444B9B300A0D408 /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B302444B9E200A0D408 /* Flight.h */,
+				048C5B312444B9E200A0D408 /* Flight.m */,
+			);
+			path = Flight;
+			sourceTree = "<group>";
+		};
+		048C5B332444BD1500A0D408 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B342444BD3000A0D408 /* TicketManager.h */,
+				048C5B352444BD3000A0D408 /* TicketManager.m */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		048C5B372444C1AF00A0D408 /* Presenting Controller */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B382444C1C900A0D408 /* PresentViewController.h */,
+				048C5B392444C1C900A0D408 /* PresentViewController.m */,
+			);
+			path = "Presenting Controller";
+			sourceTree = "<group>";
+		};
 		04E717EF243B8A9E00AA9335 = {
 			isa = PBXGroup;
 			children = (
@@ -265,7 +300,6 @@
 				04E7180F243B8AA500AA9335 /* Info.plist */,
 				04E71810243B8AA500AA9335 /* main.m */,
 				04E7181E243C746900AA9335 /* Images */,
-				04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */,
 			);
 			path = TripPlaner;
 			sourceTree = "<group>";
@@ -291,8 +325,8 @@
 		04E71821243C8FDB00AA9335 /* Essential Classes */ = {
 			isa = PBXGroup;
 			children = (
+				048C5B2F2444B9B300A0D408 /* Flight */,
 				0403B10E243E297600001E00 /* Search Request */,
-				04E71825243C904000AA9335 /* Flight */,
 				04E71824243C902F00AA9335 /* City */,
 				04E71823243C901E00AA9335 /* Country */,
 				04E71822243C900F00AA9335 /* Airport */,
@@ -327,16 +361,10 @@
 			path = City;
 			sourceTree = "<group>";
 		};
-		04E71825243C904000AA9335 /* Flight */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Flight;
-			sourceTree = "<group>";
-		};
 		04E71830243C995B00AA9335 /* Data Managers */ = {
 			isa = PBXGroup;
 			children = (
+				048C5B332444BD1500A0D408 /* Results */,
 				0403B10A243DF29800001E00 /* Search */,
 				04E71832243C9A9300AA9335 /* Destinations */,
 			);
@@ -443,19 +471,21 @@
 			files = (
 				0403B100243DC0F000001E00 /* ActiveSession.m in Sources */,
 				047273ED2440C62E00908B78 /* FlightRequest.m in Sources */,
+				048C5B3A2444C1C900A0D408 /* PresentViewController.m in Sources */,
 				04E71835243C9B0200AA9335 /* DestinationsManager.m in Sources */,
 				04E71811243B8AA500AA9335 /* main.m in Sources */,
 				04872210243CE9960028992D /* SearchViewController.m in Sources */,
 				042C43A0243F4BC000E7B5B3 /* PlaceViewController.m in Sources */,
 				04E71828243C907F00AA9335 /* Airport.m in Sources */,
-				04E71809243B8A9E00AA9335 /* TripPlaner.xcdatamodeld in Sources */,
 				047273E92440BFE800908B78 /* LoadingViewController.m in Sources */,
 				04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */,
 				04E7182B243C909400AA9335 /* Country.m in Sources */,
 				04E71839243CA4D800AA9335 /* DestinationsRequestManager.m in Sources */,
+				048C5B322444B9E200A0D408 /* Flight.m in Sources */,
 				0403B109243DC60B00001E00 /* SettingsManager.m in Sources */,
 				0403B104243DC10C00001E00 /* UserSettings.m in Sources */,
 				0403B10D243DF2BB00001E00 /* SearchEngine.m in Sources */,
+				048C5B362444BD3000A0D408 /* TicketManager.m in Sources */,
 				045F2249244055E600A470E2 /* MainViewController.m in Sources */,
 				0403B111243E299900001E00 /* SearchRequest.m in Sources */,
 				045F224D244073E600A470E2 /* DateViewController.m in Sources */,
@@ -647,19 +677,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		04E71807243B8A9E00AA9335 /* TripPlaner.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				04E71808243B8A9E00AA9335 /* TripPlaner.xcdatamodel */,
-			);
-			currentVersion = 04E71808243B8A9E00AA9335 /* TripPlaner.xcdatamodel */;
-			path = TripPlaner.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 04E717F0243B8A9E00AA9335 /* Project object */;
 }

@@ -17,10 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor greenColor]];
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
     FlightRequest* Requester = [[FlightRequest alloc] init];
-    [Requester flightsFromSearchRequest:[ActiveSession sharedInstance].search];
+    [Requester flightsFromSearchRequest:[ActiveSession sharedInstance].search :^(NSArray* Data){
+        [[TicketManager sharedInstance] uploadTicketsFromSearch:Data];
+        dispatch_async(mainQueue, ^(){
+            [self jumpToTickets];
+        });
+    }];
     
     // Do any additional setup after loading the view.
+}
+
+
+
+-(void)jumpToTickets{
+    PresentViewController* newController = [[PresentViewController alloc] init];
+    [self.navigationController pushViewController:newController animated:YES];
 }
 
 /*

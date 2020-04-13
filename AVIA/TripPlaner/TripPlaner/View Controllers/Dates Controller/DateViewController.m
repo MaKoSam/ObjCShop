@@ -77,8 +77,11 @@
     [_Return setText:[self dateReturnFormatter]];
     NSTimeInterval intervalEnd = [_dateReturnPicker.date timeIntervalSince1970];
     NSTimeInterval intervalStart = [_dateDeparturePicker.date timeIntervalSince1970];
-    float days = (intervalEnd - intervalStart) / 60 / 60 / 24;
+    float days = (intervalEnd - intervalStart) / 60 / 60 / 24 / 7;
     int weeks = days / 7 + 1;
+    if(weeks > 4 || weeks < 0){
+        weeks = 1;
+    }
     NSString* duration = [[NSString alloc] initWithFormat:@"%d", weeks];
     [[ActiveSession sharedInstance].search setTrip_duration:duration];
 }

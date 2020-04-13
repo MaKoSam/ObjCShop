@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FlightRequest : NSObject
 
--(void)flightsFromSearchRequest:(SearchRequest*)request;
+-(void)flightsFromSearchRequest:(SearchRequest*)request :(void(^)(NSArray*))completionHandler;
 
 -(NSString*)generateApiFromRequest:(SearchRequest*)request;
 

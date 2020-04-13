@@ -10,7 +10,7 @@
 
 @implementation FlightRequest
 
--(void)flightsFromSearchRequest:(SearchRequest *)request{
+-(void)flightsFromSearchRequest:(SearchRequest *)request :(void(^)(NSArray*))completionHandler{
     NSString* stringURL = [[NSString alloc] init];
     stringURL = @"https://api.travelpayouts.com/v2/prices/latest";
     NSString* appendingURL = [self generateApiFromRequest:request];
@@ -20,7 +20,15 @@
     
     NSURLSessionDataTask* RequestDataTask = [[NSURLSession sharedSession] dataTaskWithURL: urlRequest completionHandler:^(NSData* data, NSURLResponse* respone, NSError* error){
         NSDictionary* JSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-        NSLog(@"%@", JSON);
+        NSLog(@"%@\n\n", JSON);
+        BOOL success = [JSON valueForKey:@"success"];
+        if(success){
+            NSArray* Data = [[NSArray alloc] init];
+            Data = [JSON valueForKey:@"data"];
+            completionHandler(Data);
+        } else {
+            NSLog(@"NOPE");
+        }
     }];
     
     [RequestDataTask resume];
