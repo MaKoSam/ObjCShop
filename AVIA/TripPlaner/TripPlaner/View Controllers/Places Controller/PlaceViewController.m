@@ -86,6 +86,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     Airport* selectedPlace = [[Airport alloc] init];
+    SearchEngine* search = [[SearchEngine alloc] init];
+    
     if([self isFiltering]){
         selectedPlace = [_SortedPlaces objectAtIndex:[indexPath row]];
     } else {
@@ -94,8 +96,14 @@
 
     if([self.searchType isEqualToString:@"origin"]){
         [ActiveSession sharedInstance].search.origin = selectedPlace.code;
+        
+        [ActiveSession sharedInstance].search.originCity = [search findCityByKeyReturnName:selectedPlace.city_code];
+        [ActiveSession sharedInstance].search.originCountry = [search findCountryByKeyReturnName:selectedPlace.country_code];
     } else if([self.searchType isEqualToString:@"dest"]){
         [ActiveSession sharedInstance].search.destination = selectedPlace.code;
+        
+        [ActiveSession sharedInstance].search.destCity = [search findCityByKeyReturnName:selectedPlace.city_code];
+        [ActiveSession sharedInstance].search.destCountry = [search findCountryByKeyReturnName:selectedPlace.country_code];
     }
 
     [self.navigationController popViewControllerAnimated:YES];

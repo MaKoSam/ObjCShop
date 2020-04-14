@@ -23,6 +23,7 @@
 		048C5B322444B9E200A0D408 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B312444B9E200A0D408 /* Flight.m */; };
 		048C5B362444BD3000A0D408 /* TicketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B352444BD3000A0D408 /* TicketManager.m */; };
 		048C5B3A2444C1C900A0D408 /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B392444C1C900A0D408 /* PresentViewController.m */; };
+		048C5B3C2445AB8D00A0D408 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C5B3B2445AB8D00A0D408 /* plane.png */; };
 		04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E717FC243B8A9E00AA9335 /* AppDelegate.m */; };
 		04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180A243B8AA500AA9335 /* Assets.xcassets */; };
 		04E7180E243B8AA500AA9335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */; };
@@ -68,6 +69,7 @@
 		048C5B352444BD3000A0D408 /* TicketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketManager.m; sourceTree = "<group>"; };
 		048C5B382444C1C900A0D408 /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
 		048C5B392444C1C900A0D408 /* PresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
+		048C5B3B2445AB8D00A0D408 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		04E717F8243B8A9E00AA9335 /* TripPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E717FB243B8A9E00AA9335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04E717FC243B8A9E00AA9335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				0403B112243E2F9400001E00 /* SearchScreen.png */,
+				048C5B3B2445AB8D00A0D408 /* plane.png */,
 				04E7181F243C74DB00AA9335 /* LaunchScreen.png */,
 			);
 			path = Images;
@@ -457,6 +460,7 @@
 			files = (
 				04E71820243C74DB00AA9335 /* LaunchScreen.png in Resources */,
 				0403B113243E2F9400001E00 /* SearchScreen.png in Resources */,
+				048C5B3C2445AB8D00A0D408 /* plane.png in Resources */,
 				04E7180E243B8AA500AA9335 /* LaunchScreen.storyboard in Resources */,
 				04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */,
 			);

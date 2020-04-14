@@ -10,15 +10,20 @@
 #import "PlaceViewController.h"
 #import "LoadingViewController.h"
 #import "DateViewController.h"
-#import "ActiveSession.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchViewController : UIViewController
 
+@property (nonatomic, strong) UIView* lableView;
+@property (nonatomic, strong) UILabel* label;
+
 @property (nonatomic, strong) UIView* PlacesView; //Selector
 @property (nonatomic, strong) UIButton* originSelect; //Selector
 @property (nonatomic, strong) UIButton* destinationSelect; //Selector
+@property (nonatomic, strong) UILabel* originCity;
+@property (nonatomic, strong) UILabel* destCity;
+@property (nonatomic, strong) UIImageView* flight;
 
 @property (nonatomic, strong) UIView* PickerView; //Picker
 @property (nonatomic, strong) UIButton* datePickerButton; //Picker

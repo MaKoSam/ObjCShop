@@ -21,6 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* trip_duration; //Int
 @property (nonatomic, strong) NSString* BeginPeriod; //For formatting
 
+//For UI
+@property (nonatomic, strong) NSString* originCity;
+@property (nonatomic, strong) NSString* originCountry;
+@property (nonatomic, strong) NSString* destCity;
+@property (nonatomic, strong) NSString* destCountry;
+
+
 -(instancetype) initDefault;
 
 -(BOOL) readyToSearch;

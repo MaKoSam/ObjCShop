@@ -26,9 +26,12 @@
     [self.view setBackgroundColor: _mainTheme];
     
     //SetUp UI
+    [self setUpHeader];
     [self setUpPlacesView];
-    [self setUpSelectors];
     [self setUpLabels];
+    [self setUpSelectors];
+    [self setUpCities];
+    [self setUpIcons];
     [self setUpPickerView];
     [self setUpPickers];
     [self setUpButton];
@@ -92,7 +95,68 @@
 
 
 
-#pragma mark - SearchController - UI SetUp func's
+#pragma mark - Header
+
+
+- (void)setUpHeader {
+    if(!self.lableView){
+        _lableView = [[UIView alloc] init];
+        _lableView.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    if(!self.label){
+        _label = [[UILabel alloc] init];
+        _label.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    [_lableView setBackgroundColor:[UIColor whiteColor]];
+    [[_lableView layer] setCornerRadius: 15.0];
+    [_label setText:@"Поиск Авиабилетов"];
+    [_label setFont:[UIFont fontWithName:@"Helvetica-Bold" size:30.0]];
+    [_label setAdjustsFontSizeToFitWidth:YES];
+    [_label setTextColor:_mainTheme];
+    [_label setTextAlignment:NSTextAlignmentCenter];
+    
+    [self.view addSubview:_lableView];
+    [self.view addSubview:_label];
+    
+    NSLayoutConstraint* viewTop = [NSLayoutConstraint
+                                   constraintWithItem:_lableView
+                                   attribute:NSLayoutAttributeTop
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:self.view
+                                   attribute:NSLayoutAttributeTop
+                                   multiplier:1.0 constant:50.0];
+    NSLayoutConstraint* viewLead = [NSLayoutConstraint
+                                    constraintWithItem:_lableView
+                                    attribute:NSLayoutAttributeLeading
+                                    relatedBy:NSLayoutRelationEqual
+                                    toItem:self.view
+                                    attribute:NSLayoutAttributeLeading
+                                    multiplier:1.0 constant:30.0];
+    NSLayoutConstraint* viewTrail = [NSLayoutConstraint
+                                     constraintWithItem:_lableView
+                                     attribute:NSLayoutAttributeTrailing
+                                     relatedBy:NSLayoutRelationEqual
+                                     toItem:self.view
+                                     attribute:NSLayoutAttributeTrailing
+                                     multiplier:1.0 constant:-30.0];
+    NSLayoutConstraint* viewHeight = [NSLayoutConstraint
+                                      constraintWithItem:_lableView
+                                      attribute:NSLayoutAttributeHeight
+                                      relatedBy:NSLayoutRelationEqual
+                                      toItem:nil
+                                      attribute:NSLayoutAttributeNotAnAttribute
+                                      multiplier:1.0 constant:60.0];
+    [self.view addConstraints:@[viewTop, viewLead, viewTrail, viewHeight]];
+     
+     NSLayoutConstraint* labelTop = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_lableView attribute:NSLayoutAttributeTop multiplier:1.0 constant:5.0];
+     NSLayoutConstraint* labelLead = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_lableView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:5.0];
+    NSLayoutConstraint* labelTrail = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_lableView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-5.0];
+    NSLayoutConstraint* labelBottom = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_lableView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-5.0];
+    
+    [self.view addConstraints:@[labelTop, labelLead, labelTrail, labelBottom]];
+}
+
+#pragma mark - Labels
 
 - (void)setUpLabels{
     if (!self.fromLabel) {
@@ -103,10 +167,15 @@
         _toLabel = [[UILabel alloc] init];
         _toLabel.translatesAutoresizingMaskIntoConstraints = NO;
     }
-    [_fromLabel setText:@"Откуда:"];
-    [_toLabel setText:@"Куда:"];
+    [_fromLabel setText:@"Откуда"];
+    [_toLabel setText:@"Куда"];
+    
+    [_fromLabel setTextAlignment:NSTextAlignmentCenter];
+    [_toLabel setTextAlignment:NSTextAlignmentCenter];
+    
     [_fromLabel setTextColor:_mainTheme];
     [_toLabel setTextColor:_mainTheme];
+    
     [self.view addSubview:_fromLabel];
     [self.view addSubview:_toLabel];
     
@@ -141,15 +210,15 @@
                                       toItem:nil
                                       attribute:NSLayoutAttributeNotAnAttribute
                                       multiplier:1.0
-                                      constant:70.0];
+                                      constant:30.0];
     [self.view addConstraints:@[fromTop, fromLead, fromTrail, fromHeight]];
     
     NSLayoutConstraint* toTop = [NSLayoutConstraint
                                    constraintWithItem:_toLabel
                                    attribute:NSLayoutAttributeTop
                                    relatedBy:NSLayoutRelationEqual
-                                   toItem:_fromLabel
-                                   attribute:NSLayoutAttributeBottom
+                                   toItem:_PlacesView
+                                   attribute:NSLayoutAttributeTop
                                    multiplier:1.0
                                    constant:5.0];
     NSLayoutConstraint* toLead = [NSLayoutConstraint
@@ -157,26 +226,98 @@
                                     attribute:NSLayoutAttributeLeading
                                     relatedBy:NSLayoutRelationEqual
                                     toItem:_PlacesView
-                                    attribute:NSLayoutAttributeLeading
+                                    attribute:NSLayoutAttributeCenterX
                                     multiplier:1.0
-                                    constant:5.0];
+                                    constant:10.0];
     NSLayoutConstraint* toTrail = [NSLayoutConstraint
                                      constraintWithItem:_toLabel
                                      attribute:NSLayoutAttributeTrailing
                                      relatedBy:NSLayoutRelationEqual
                                      toItem:_PlacesView
-                                     attribute:NSLayoutAttributeCenterX
+                                     attribute:NSLayoutAttributeTrailing
                                      multiplier:1.0
-                                     constant:-10.0];
-    NSLayoutConstraint* toBottom = [NSLayoutConstraint
+                                     constant:-5.0];
+    NSLayoutConstraint* toHeight = [NSLayoutConstraint
                                       constraintWithItem:_toLabel
-                                      attribute:NSLayoutAttributeBottom
+                                      attribute:NSLayoutAttributeHeight
                                       relatedBy:NSLayoutRelationEqual
-                                      toItem:_PlacesView
-                                      attribute:NSLayoutAttributeBottom                                      multiplier:1.0
-                                      constant:-5.0];
-    [self.view addConstraints:@[toTop, toLead, toTrail, toBottom]];
+                                      toItem:nil
+                                      attribute:NSLayoutAttributeNotAnAttribute
+                                      multiplier:1.0
+                                      constant:30.0];
+    [self.view addConstraints:@[toTop, toLead, toTrail, toHeight]];
 }
+
+#pragma mark - Cities
+
+- (void)setUpCities{
+    if(!self.originCity){
+        _originCity = [[UILabel alloc] init];
+        _originCity.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    if(!self.destCity){
+        _destCity = [[UILabel alloc] init];
+        _destCity.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    [_originCity setTextColor:_mainTheme];
+    [_destCity setTextColor:_mainTheme];
+    
+    [_originCity setTextAlignment:NSTextAlignmentCenter];
+    [_destCity setTextAlignment:NSTextAlignmentCenter];
+    
+    if(![[ActiveSession sharedInstance].search.origin isEqualToString:@"notset"]){
+        [_originCity setAlpha:1.0];
+        NSString* orig = [[NSString alloc] init];
+        orig = [NSString stringWithFormat:@"%@, %@", [ActiveSession sharedInstance].search.originCity, [ActiveSession sharedInstance].search.originCountry];
+        [_originCity setText:orig];
+    } else {
+        [_originCity setAlpha: 0.0];
+    }
+    
+    if(![[ActiveSession sharedInstance].search.destination isEqualToString:@"notset"]){
+        [_destCity setAlpha:1.0];
+        NSString* dest = [[NSString alloc] init];
+        dest = [NSString stringWithFormat:@"%@, %@", [ActiveSession sharedInstance].search.destCity, [ActiveSession sharedInstance].search.destCountry];
+        [_destCity setText:dest];
+        
+    } else {
+        [_destCity setAlpha: 0.0];
+    }
+    
+    [self.view addSubview:_originCity];
+    [self.view addSubview:_destCity];
+    
+    NSLayoutConstraint* originTop = [NSLayoutConstraint constraintWithItem:_originCity attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_originSelect attribute:NSLayoutAttributeBottom multiplier:1.0 constant:5.0];
+    NSLayoutConstraint* originLead = [NSLayoutConstraint constraintWithItem:_originCity attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_PlacesView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:5.0];
+    NSLayoutConstraint* originTrail = [NSLayoutConstraint constraintWithItem:_originCity attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_PlacesView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:-10.0];
+    NSLayoutConstraint* originBottom = [NSLayoutConstraint constraintWithItem:_originCity attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_PlacesView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-5.0];
+    [self.view addConstraints:@[originTop, originLead, originTrail, originBottom]];
+
+    NSLayoutConstraint* destTop = [NSLayoutConstraint constraintWithItem:_destCity attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_destinationSelect attribute:NSLayoutAttributeBottom multiplier:1.0 constant:5.0];
+    NSLayoutConstraint* destLead = [NSLayoutConstraint constraintWithItem:_destCity attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_PlacesView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* destTrail = [NSLayoutConstraint constraintWithItem:_destCity attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_PlacesView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-5.0];
+    NSLayoutConstraint* destBottom = [NSLayoutConstraint constraintWithItem:_destCity attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_PlacesView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-5.0];
+    [self.view addConstraints:@[destTop, destLead, destTrail, destBottom]];
+}
+
+#pragma mark - Icons
+
+- (void)setUpIcons{
+    if(!self.flight){
+        _flight = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"plane.png"]];
+        _flight.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    
+    [self.view addSubview:_flight];
+    
+    NSLayoutConstraint* flightTop = [NSLayoutConstraint constraintWithItem:_flight attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_fromLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:30.0];
+    NSLayoutConstraint* flightBottom = [NSLayoutConstraint constraintWithItem:_flight attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_originCity attribute:NSLayoutAttributeTop multiplier:1.0 constant:-30];
+    NSLayoutConstraint* flightLead = [NSLayoutConstraint constraintWithItem:_flight attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_originSelect attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:30.0];
+    NSLayoutConstraint* flightTrail = [NSLayoutConstraint constraintWithItem:_flight attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_destinationSelect attribute:NSLayoutAttributeLeading multiplier:1.0 constant:-30.0];
+    [self.view addConstraints:@[flightTop, flightLead, flightTrail, flightBottom]];
+}
+
+#pragma mark - Selectors
 
 - (void)setUpSelectors{
     if(!self.originSelect){
@@ -189,17 +330,29 @@
     }
     
     [_originSelect addTarget:self action:@selector(selectOrigin:) forControlEvents:UIControlEventTouchUpInside];
-    [_originSelect setTitleColor:_mainTheme forState:UIControlStateNormal];
+    [_destinationSelect addTarget:self action:@selector(selectDestination:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [[_originSelect titleLabel] setTextAlignment:NSTextAlignmentCenter];
+    [[_destinationSelect titleLabel] setTextAlignment:NSTextAlignmentCenter];
+    
+    [_originSelect setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_destinationSelect setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [[_originSelect layer] setCornerRadius:5.0];
+    [[_destinationSelect layer] setCornerRadius:5.0];
+    
+    [_originSelect setBackgroundColor:_mainTheme];
+    [_destinationSelect setBackgroundColor:_mainTheme];
+    
     if(![[ActiveSession sharedInstance].search.origin isEqualToString:@"notset"]){
         [_originSelect setTitle:[ActiveSession sharedInstance].search.origin forState:UIControlStateNormal];
+        [[_originSelect titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:30.0]];
     } else {
         [_originSelect setTitle:@"Выбрать" forState:UIControlStateNormal];
     }
-    
-    [_destinationSelect addTarget:self action:@selector(selectDestination:) forControlEvents:UIControlEventTouchUpInside];
-    [_destinationSelect setTitleColor:_mainTheme forState:UIControlStateNormal];
     if(![[ActiveSession sharedInstance].search.destination isEqualToString:@"notset"]){
         [_destinationSelect setTitle:[ActiveSession sharedInstance].search.destination forState:UIControlStateNormal];
+        [[_destinationSelect titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:30.0]];
     } else {
         [_destinationSelect setTitle:@"Выбрать" forState:UIControlStateNormal];
     }
@@ -211,8 +364,8 @@
                                      constraintWithItem:_originSelect
                                      attribute:NSLayoutAttributeTop
                                      relatedBy:NSLayoutRelationEqual
-                                     toItem:_PlacesView
-                                     attribute:NSLayoutAttributeTop
+                                     toItem:_fromLabel
+                                     attribute:NSLayoutAttributeBottom
                                      multiplier:1.0
                                      constant:5.0];
     NSLayoutConstraint* originLead = [NSLayoutConstraint
@@ -220,17 +373,17 @@
                                       attribute:NSLayoutAttributeLeading
                                       relatedBy:NSLayoutRelationEqual
                                       toItem:_PlacesView
-                                      attribute:NSLayoutAttributeCenterX
+                                      attribute:NSLayoutAttributeLeading
                                       multiplier:1.0
-                                      constant:10.0];
+                                      constant:40.0];
     NSLayoutConstraint* originTrail = [NSLayoutConstraint
                                        constraintWithItem:_originSelect
                                        attribute:NSLayoutAttributeTrailing
                                        relatedBy:NSLayoutRelationEqual
                                        toItem:_PlacesView
-                                       attribute:NSLayoutAttributeTrailing
+                                       attribute:NSLayoutAttributeCenterX
                                        multiplier:1.0
-                                       constant:-5.0];
+                                       constant:-40.0];
     NSLayoutConstraint* originHeight = [NSLayoutConstraint
                                         constraintWithItem:_originSelect
                                         attribute:NSLayoutAttributeHeight
@@ -245,18 +398,18 @@
                                    constraintWithItem:_destinationSelect
                                    attribute:NSLayoutAttributeTop
                                    relatedBy:NSLayoutRelationEqual
-                                   toItem:_originSelect
+                                   toItem:_toLabel
                                    attribute:NSLayoutAttributeBottom
                                    multiplier:1.0
                                    constant:5.0];
-    NSLayoutConstraint* destBottom = [NSLayoutConstraint
+    NSLayoutConstraint* destHeight = [NSLayoutConstraint
                                    constraintWithItem:_destinationSelect
-                                   attribute:NSLayoutAttributeBottom
+                                   attribute:NSLayoutAttributeHeight
                                    relatedBy:NSLayoutRelationEqual
-                                   toItem:_PlacesView
-                                   attribute:NSLayoutAttributeBottom
+                                   toItem:nil
+                                   attribute:NSLayoutAttributeNotAnAttribute
                                    multiplier:1.0
-                                   constant:-5.0];
+                                   constant:70.0];
     NSLayoutConstraint* destLead = [NSLayoutConstraint
                                       constraintWithItem:_destinationSelect
                                       attribute:NSLayoutAttributeLeading
@@ -264,7 +417,7 @@
                                       toItem:_PlacesView
                                       attribute:NSLayoutAttributeCenterX
                                       multiplier:1.0
-                                      constant:10.0];
+                                      constant:40.0];
     NSLayoutConstraint* destTrail = [NSLayoutConstraint
                                        constraintWithItem:_destinationSelect
                                        attribute:NSLayoutAttributeTrailing
@@ -272,28 +425,30 @@
                                        toItem:_PlacesView
                                        attribute:NSLayoutAttributeTrailing
                                        multiplier:1.0
-                                       constant:-5.0];
-    [self.view addConstraints:@[destTop, destLead, destTrail, destBottom]];
+                                       constant:-40.0];
+    [self.view addConstraints:@[destTop, destLead, destTrail, destHeight]];
     
 }
+
+#pragma mark - PlacesView
 
 - (void)setUpPlacesView{
     if(!self.PlacesView){
         _PlacesView = [[UIView alloc] init];
+        _PlacesView.translatesAutoresizingMaskIntoConstraints = NO;
     }
-    _PlacesView.translatesAutoresizingMaskIntoConstraints = NO;
     _PlacesView.backgroundColor = [UIColor whiteColor];
-    _PlacesView.layer.cornerRadius = 15.0;
+    [[_PlacesView layer] setCornerRadius:15.0];
     [self.view addSubview:_PlacesView];
     
     NSLayoutConstraint* placeTop = [NSLayoutConstraint
                                     constraintWithItem:_PlacesView
                                     attribute:NSLayoutAttributeTop
                                     relatedBy:NSLayoutRelationEqual
-                                    toItem:self.view
-                                    attribute:NSLayoutAttributeTop
+                                    toItem:_lableView
+                                    attribute:NSLayoutAttributeBottom
                                     multiplier:1.0
-                                    constant:75.0];
+                                    constant:20.0];
 
     NSLayoutConstraint* placeHeight = [NSLayoutConstraint
                                        constraintWithItem:_PlacesView
@@ -302,7 +457,7 @@
                                        toItem:nil
                                        attribute:NSLayoutAttributeNotAnAttribute
                                        multiplier:1.0
-                                       constant:155.0];
+                                       constant:150.0];
     NSLayoutConstraint* placeLeading = [NSLayoutConstraint
                                         constraintWithItem:_PlacesView
                                         attribute:NSLayoutAttributeLeading
@@ -322,6 +477,8 @@
     
     [self.view addConstraints:@[placeLeading, placeTrailing, placeTop, placeHeight]];
 }
+
+#pragma mark - PickerView
 
 -(void)setUpPickerView{
     if(!self.PickerView){
@@ -366,6 +523,8 @@
                                         constant:160.0];
     [self.view addConstraints:@[pickerTop, pickerLead, pickerTrail, pickerHeight]];
 }
+
+#pragma mark - Pickers
 
 -(void)setUpPickers{
     if (!self.typePickerControl) {
@@ -470,6 +629,8 @@
     [self.view addConstraints:@[dateTop, dateLead, dateTrail, dateBottom]];
     
 }
+
+#pragma mark - Button
 
 -(void) setUpButton{
     if(!self.searchButton){
