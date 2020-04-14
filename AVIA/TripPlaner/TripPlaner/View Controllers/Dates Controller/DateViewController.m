@@ -25,10 +25,6 @@
         _dateReturnPicker = [[UIDatePicker alloc] init];
         [_dateDeparturePicker setMinimumDate:[NSDate date]];
         [_dateReturnPicker setMinimumDate:[_dateDeparturePicker date]];
-        [_dateDeparturePicker setBackgroundColor:[UIColor whiteColor]];
-        [_dateDeparturePicker setTintColor:_mainTheme];
-        [_dateReturnPicker setBackgroundColor:[UIColor whiteColor]];
-        [_dateReturnPicker setTintColor:_mainTheme];
         [_dateDeparturePicker setDatePickerMode:UIDatePickerModeDate];
         [_dateReturnPicker setDatePickerMode:UIDatePickerModeDate];
     }
@@ -147,10 +143,12 @@
         _DepartureLabel.translatesAutoresizingMaskIntoConstraints = NO;
     }
     [_DepartureLabel setText:@"Туда"];
+    [_DepartureLabel setTextAlignment:NSTextAlignmentCenter];
+    [_DepartureLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20.0]];
     [_DepartureLabel setTextColor:_mainTheme];
-    [[_DepartureLabel layer] setCornerRadius:5.0];
-    [[_DepartureLabel layer] setBorderWidth:2.0];
-    [[_DepartureLabel layer] setBorderColor:_mainTheme.CGColor];
+//    [[_DepartureLabel layer] setCornerRadius:5.0];
+//    [[_DepartureLabel layer] setBorderWidth:2.0];
+//    [[_DepartureLabel layer] setBorderColor:_mainTheme.CGColor];
     
     [self.view addSubview:_DepartureLabel];
     
@@ -197,7 +195,8 @@
     
         
     [_Departure setText:@"Выбрать Дату..."];
-    [_Departure setInputAccessoryView:_dateDeparturePicker];
+    [_Departure setTextAlignment:NSTextAlignmentCenter];
+    [_Departure setInputView:_dateDeparturePicker];
     [_Departure setTextColor: _mainTheme];
     [[_Departure layer] setCornerRadius:5.0];
     [[_Departure layer] setBorderWidth:2.0];
@@ -292,10 +291,12 @@
             _ReturnLabel.translatesAutoresizingMaskIntoConstraints = NO;
         }
         [_ReturnLabel setText:@"Обратно"];
+        [_ReturnLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20.0]];
         [_ReturnLabel setTextColor:_mainTheme];
-        [[_ReturnLabel layer] setCornerRadius:5.0];
-        [[_ReturnLabel layer] setBorderWidth:2.0];
-        [[_ReturnLabel layer] setBorderColor:_mainTheme.CGColor];
+        [_ReturnLabel setTextAlignment:NSTextAlignmentCenter];
+//        [[_ReturnLabel layer] setCornerRadius:5.0];
+//        [[_ReturnLabel layer] setBorderWidth:2.0];
+//        [[_ReturnLabel layer] setBorderColor:_mainTheme.CGColor];
             
         [self.view addSubview:_ReturnLabel];
             
@@ -340,8 +341,9 @@
         }
         
         [_Return setText:@"Выбрать Дату..."];
-        [_Return setInputAccessoryView:_dateReturnPicker];
+        [_Return setInputView:_dateReturnPicker];
         [_Return setTextColor: _mainTheme];
+        [_Return setTextAlignment:NSTextAlignmentCenter];
         [[_Return layer] setCornerRadius:5.0];
         [[_Return layer] setBorderWidth:2.0];
         [[_Return layer] setBorderColor:_mainTheme.CGColor];
