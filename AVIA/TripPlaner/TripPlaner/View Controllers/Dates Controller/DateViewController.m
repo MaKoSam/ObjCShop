@@ -146,9 +146,6 @@
     [_DepartureLabel setTextAlignment:NSTextAlignmentCenter];
     [_DepartureLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20.0]];
     [_DepartureLabel setTextColor:_mainTheme];
-//    [[_DepartureLabel layer] setCornerRadius:5.0];
-//    [[_DepartureLabel layer] setBorderWidth:2.0];
-//    [[_DepartureLabel layer] setBorderColor:_mainTheme.CGColor];
     
     [self.view addSubview:_DepartureLabel];
     
@@ -294,9 +291,6 @@
         [_ReturnLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20.0]];
         [_ReturnLabel setTextColor:_mainTheme];
         [_ReturnLabel setTextAlignment:NSTextAlignmentCenter];
-//        [[_ReturnLabel layer] setCornerRadius:5.0];
-//        [[_ReturnLabel layer] setBorderWidth:2.0];
-//        [[_ReturnLabel layer] setBorderColor:_mainTheme.CGColor];
             
         [self.view addSubview:_ReturnLabel];
             

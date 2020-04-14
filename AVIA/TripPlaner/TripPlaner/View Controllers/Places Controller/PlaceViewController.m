@@ -74,7 +74,6 @@
     PlaceTableCell* newCell = [_PlaceTable dequeueReusableCellWithIdentifier:@"PlaceCell"];
     if(!newCell){
         newCell = [[PlaceTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"place"];
-//        newCell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }
     if([self isFiltering]){
         [newCell setAirport:[_SortedPlaces objectAtIndex:[indexPath row]]];
