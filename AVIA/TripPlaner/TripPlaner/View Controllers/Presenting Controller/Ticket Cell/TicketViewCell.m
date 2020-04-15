@@ -62,6 +62,15 @@
     int hours = minutes / 60;
     minutes %= 60;
     [_flightTime setText:[NSString stringWithFormat:@"%d часов %d минут", hours, minutes]];
+    [_flightLength setText:[NSString stringWithFormat:@"%@ км", [_flight distance]]];
+    
+    if([[_flight trip_class] isEqual:@0]){
+        [_flightClass setText:@"Эконом"];
+    } else {
+        [_flightClass setText:@"Бизнес"];
+    }
+    
+    [_price setText:[NSString stringWithFormat:@"%@₽", [_flight value]]];
 }
 
 #pragma mark - Views
@@ -98,6 +107,33 @@
     NSLayoutConstraint* dropHeight = [NSLayoutConstraint constraintWithItem:_dropView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:1.0];
     
     [self.contentView addConstraints:@[dropTop, dropLead, dropTrail, dropHeight]];
+    
+    UIView* dotOne = [[UIView alloc] init];
+    dotOne.translatesAutoresizingMaskIntoConstraints = NO;
+    UIView* dotTwo = [[UIView alloc] init];
+    dotTwo.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [dotOne setBackgroundColor:_mainTheme];
+    [[dotOne layer] setCornerRadius:10.0];
+    [dotTwo setBackgroundColor:_mainTheme];
+    [[dotTwo layer] setCornerRadius:10.0];
+    
+    [self.contentView addSubview:dotOne];
+    [self.contentView addSubview:dotTwo];
+    
+    NSLayoutConstraint* dotOneTop = [NSLayoutConstraint constraintWithItem:dotOne attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_dropView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:-10.0];
+    NSLayoutConstraint* dotOneBottom = [NSLayoutConstraint constraintWithItem:dotOne attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_dropView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* dotOneLead = [NSLayoutConstraint constraintWithItem:dotOne attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:-10.0];
+    NSLayoutConstraint* dotOneTrail = [NSLayoutConstraint constraintWithItem:dotOne attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:10.0];
+    
+    [self.contentView addConstraints:@[dotOneTop, dotOneLead, dotOneTrail, dotOneBottom]];
+    
+    NSLayoutConstraint* dotTwoTop = [NSLayoutConstraint constraintWithItem:dotTwo attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_dropView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:-10.0];
+    NSLayoutConstraint* dotTwoBottom = [NSLayoutConstraint constraintWithItem:dotTwo attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_dropView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* dotTwoLead = [NSLayoutConstraint constraintWithItem:dotTwo attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-10.0];
+    NSLayoutConstraint* dotTwoTrail = [NSLayoutConstraint constraintWithItem:dotTwo attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:10.0];
+    
+    [self.contentView addConstraints:@[dotTwoTop, dotTwoLead, dotTwoTrail, dotTwoBottom]];
 }
 
 #pragma mark - Header
@@ -342,6 +378,109 @@
     NSLayoutConstraint* timeHeight = [NSLayoutConstraint constraintWithItem:_flightTime attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:30.0];
     
     [self.contentView addConstraints:@[timeTop, timeLead, timeTrail, timeHeight]];
+    
+    if(!self.flightLength){
+        _flightLength = [[UILabel alloc] init];
+        _flightLength.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    UILabel* lengthLabel = [[UILabel alloc] init];
+    lengthLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [_flightLength setTextColor:_mainTheme];
+    [_flightLength setTextAlignment:NSTextAlignmentLeft];
+    
+    [lengthLabel setTextColor:_mainTheme];
+    [lengthLabel setTextAlignment:NSTextAlignmentLeft];
+    [lengthLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20.0]];
+    [lengthLabel setText:@"Расстояние:"];
+    
+    [self.contentView addSubview:lengthLabel];
+    [self.contentView addSubview:_flightLength];
+    
+    NSLayoutConstraint* legthLabelTop = [NSLayoutConstraint constraintWithItem:lengthLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_flightTime attribute:NSLayoutAttributeBottom multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* legthLabelLead = [NSLayoutConstraint constraintWithItem:lengthLabel attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:20.0];
+    NSLayoutConstraint* legthLabelTrail = [NSLayoutConstraint constraintWithItem:lengthLabel attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-20.0];
+    NSLayoutConstraint* legthLabelHeight = [NSLayoutConstraint constraintWithItem:lengthLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:30.0];
+    
+    [self.contentView addConstraints:@[legthLabelTop, legthLabelLead, legthLabelTrail, legthLabelHeight]];
+    
+    NSLayoutConstraint* legthTop = [NSLayoutConstraint constraintWithItem:_flightLength attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:lengthLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:5.0];
+    NSLayoutConstraint* legthLead = [NSLayoutConstraint constraintWithItem:_flightLength attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:20.0];
+    NSLayoutConstraint* legthTrail = [NSLayoutConstraint constraintWithItem:_flightLength attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-20.0];
+    NSLayoutConstraint* legthHeight = [NSLayoutConstraint constraintWithItem:_flightLength attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:30.0];
+    
+    [self.contentView addConstraints:@[legthTop, legthLead, legthTrail, legthHeight]];
+    
+    if(!self.flightClass){
+        _flightClass = [[UILabel alloc] init];
+        _flightClass.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    UILabel* classLabel = [[UILabel alloc] init];
+    classLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [_flightClass setTextColor:_mainTheme];
+    [_flightClass setTextAlignment:NSTextAlignmentLeft];
+    
+    [classLabel setTextColor:_mainTheme];
+    [classLabel setTextAlignment:NSTextAlignmentLeft];
+    [classLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20.0]];
+    [classLabel setText:@"Класс обслуживания:"];
+    
+    [self.contentView addSubview:classLabel];
+    [self.contentView addSubview:_flightClass];
+    
+    NSLayoutConstraint* classLabelTop = [NSLayoutConstraint constraintWithItem:classLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_flightLength attribute:NSLayoutAttributeBottom multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* classLabelLead = [NSLayoutConstraint constraintWithItem:classLabel attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:20.0];
+    NSLayoutConstraint* classLabelTrail = [NSLayoutConstraint constraintWithItem:classLabel attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-20.0];
+    NSLayoutConstraint* classLabelHeight = [NSLayoutConstraint constraintWithItem:classLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:30.0];
+    
+    [self.contentView addConstraints:@[classLabelTop, classLabelLead, classLabelTrail, classLabelHeight]];
+    
+    NSLayoutConstraint* classTop = [NSLayoutConstraint constraintWithItem:_flightClass attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:classLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:5.0];
+    NSLayoutConstraint* classLead = [NSLayoutConstraint constraintWithItem:_flightClass attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:20.0];
+    NSLayoutConstraint* classTrail = [NSLayoutConstraint constraintWithItem:_flightClass attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-20.0];
+    NSLayoutConstraint* classHeight = [NSLayoutConstraint constraintWithItem:_flightClass attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:30.0];
+    
+    [self.contentView addConstraints:@[classTop, classLead, classTrail, classHeight]];
+    
+    if(!self.price){
+        _price = [[UILabel alloc] init];
+        _price.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    
+    [_price setTextColor:_mainTheme];
+    [_price setTextAlignment:NSTextAlignmentLeft];
+    [_price setFont:[UIFont fontWithName:@"Helvetica-Bold" size:30.0]];
+    
+    [self.contentView addSubview:_price];
+    
+    NSLayoutConstraint* priceTop = [NSLayoutConstraint constraintWithItem:_price attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_flightClass attribute:NSLayoutAttributeBottom multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* priceLead = [NSLayoutConstraint constraintWithItem:_price attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:20.0];
+    NSLayoutConstraint* priceTrail = [NSLayoutConstraint constraintWithItem:_price attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:-20.0];
+    NSLayoutConstraint* priceHeight = [NSLayoutConstraint constraintWithItem:_price attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:50.0];
+    
+    [self.contentView addConstraints:@[priceTop, priceLead, priceTrail, priceHeight]];
+    
+    if(!self.buy){
+        _buy = [[UIButton alloc] init];
+        _buy.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    
+    [_buy setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_buy setBackgroundColor:_mainTheme];
+    [[_buy layer] setCornerRadius:10.0];
+    [[_buy titleLabel] setTextAlignment:NSTextAlignmentCenter];
+    [_buy setTitle:@"Купить" forState:UIControlStateNormal];
+    [[_buy titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:30.0]];
+    
+    [self.contentView addSubview:_buy];
+    
+    NSLayoutConstraint* buyTop = [NSLayoutConstraint constraintWithItem:_buy attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_flightClass attribute:NSLayoutAttributeBottom multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* buyLead = [NSLayoutConstraint constraintWithItem:_buy attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:20.0];
+    NSLayoutConstraint* buyTrail = [NSLayoutConstraint constraintWithItem:_buy attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:_backView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-20.0];
+    NSLayoutConstraint* buyHeight = [NSLayoutConstraint constraintWithItem:_buy attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:50.0];
+    
+    [self.contentView addConstraints:@[buyTop, buyLead, buyTrail, buyHeight]];
 }
 
 @end

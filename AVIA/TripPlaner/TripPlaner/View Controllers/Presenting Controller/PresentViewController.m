@@ -33,7 +33,7 @@
         _presentingTable.translatesAutoresizingMaskIntoConstraints = NO;
     }
     [_presentingTable registerClass:[TicketViewCell self] forCellReuseIdentifier:@"ticket"];
-    [_presentingTable setRowHeight:400.0];
+    [_presentingTable setRowHeight:600.0];
     _presentingTable.dataSource = self;
     [self setUpViews];
 }

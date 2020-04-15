@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber* changes;
 @property (nonatomic, strong) NSString* origin;
 @property (nonatomic, strong) NSString* returnDate;
-@property (nonatomic, strong) NSString* trip_class;
+@property (nonatomic, strong) NSNumber* trip_class;
 @property (nonatomic, strong) NSNumber* value;
 
 -(instancetype)initWithDictionary:(NSDictionary* )dictionary;

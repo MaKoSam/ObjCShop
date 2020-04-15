@@ -37,6 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel* flightLength;
 @property (nonatomic, strong) UILabel* flightTime;
 
+@property (nonatomic, strong) UILabel* flightClass;
+@property (nonatomic, strong) UIButton* buy;
+
 -(void)updateForFlight:(Flight*)superFlight;
 
 

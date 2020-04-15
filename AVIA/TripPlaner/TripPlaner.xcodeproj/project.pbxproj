@@ -270,6 +270,7 @@
 			children = (
 				048C5B382444C1C900A0D408 /* PresentViewController.h */,
 				048C5B392444C1C900A0D408 /* PresentViewController.m */,
+				04B98B872447646C00787274 /* Map Cell */,
 				048C5B3D2445D0A000A0D408 /* Ticket Cell */,
 			);
 			path = "Presenting Controller";
@@ -282,6 +283,13 @@
 				048C5B3F2445D0C100A0D408 /* TicketViewCell.m */,
 			);
 			path = "Ticket Cell";
+			sourceTree = "<group>";
+		};
+		04B98B872447646C00787274 /* Map Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Map Cell";
 			sourceTree = "<group>";
 		};
 		04E717EF243B8A9E00AA9335 = {
