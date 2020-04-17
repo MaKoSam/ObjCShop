@@ -1,0 +1,714 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0403B100243DC0F000001E00 /* ActiveSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403B0FF243DC0F000001E00 /* ActiveSession.m */; };
+		0403B104243DC10C00001E00 /* UserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403B103243DC10C00001E00 /* UserSettings.m */; };
+		0403B109243DC60B00001E00 /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403B108243DC60B00001E00 /* SettingsManager.m */; };
+		0403B10D243DF2BB00001E00 /* SearchEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403B10C243DF2BB00001E00 /* SearchEngine.m */; };
+		0403B111243E299900001E00 /* SearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403B110243E299900001E00 /* SearchRequest.m */; };
+		0403B113243E2F9400001E00 /* SearchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0403B112243E2F9400001E00 /* SearchScreen.png */; };
+		042C43A0243F4BC000E7B5B3 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C439F243F4BC000E7B5B3 /* PlaceViewController.m */; };
+		042C43A4243F4E8C00E7B5B3 /* PlaceTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C43A3243F4E8C00E7B5B3 /* PlaceTableCell.m */; };
+		045F2249244055E600A470E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F2248244055E600A470E2 /* MainViewController.m */; };
+		045F224D244073E600A470E2 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F224C244073E600A470E2 /* DateViewController.m */; };
+		047273E92440BFE800908B78 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047273E82440BFE800908B78 /* LoadingViewController.m */; };
+		047273ED2440C62E00908B78 /* FlightRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047273EC2440C62E00908B78 /* FlightRequest.m */; };
+		04872210243CE9960028992D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487220F243CE9960028992D /* SearchViewController.m */; };
+		048C5B322444B9E200A0D408 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B312444B9E200A0D408 /* Flight.m */; };
+		048C5B362444BD3000A0D408 /* TicketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B352444BD3000A0D408 /* TicketManager.m */; };
+		048C5B3A2444C1C900A0D408 /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B392444C1C900A0D408 /* PresentViewController.m */; };
+		048C5B3C2445AB8D00A0D408 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C5B3B2445AB8D00A0D408 /* plane.png */; };
+		048C5B402445D0C100A0D408 /* TicketViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B3F2445D0C100A0D408 /* TicketViewCell.m */; };
+		04B98B8A244765D600787274 /* MapViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B98B89244765D600787274 /* MapViewCell.m */; };
+		04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E717FC243B8A9E00AA9335 /* AppDelegate.m */; };
+		04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180A243B8AA500AA9335 /* Assets.xcassets */; };
+		04E7180E243B8AA500AA9335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */; };
+		04E71811243B8AA500AA9335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71810243B8AA500AA9335 /* main.m */; };
+		04E7181D243C6B8C00AA9335 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7181C243C6B8C00AA9335 /* LaunchViewController.m */; };
+		04E71820243C74DB00AA9335 /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E7181F243C74DB00AA9335 /* LaunchScreen.png */; };
+		04E71828243C907F00AA9335 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71827243C907F00AA9335 /* Airport.m */; };
+		04E7182B243C909400AA9335 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7182A243C909400AA9335 /* Country.m */; };
+		04E7182F243C90AB00AA9335 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7182E243C90AB00AA9335 /* City.m */; };
+		04E71835243C9B0200AA9335 /* DestinationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71834243C9B0200AA9335 /* DestinationsManager.m */; };
+		04E71839243CA4D800AA9335 /* DestinationsRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71838243CA4D800AA9335 /* DestinationsRequestManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0403B0FE243DC0F000001E00 /* ActiveSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActiveSession.h; sourceTree = "<group>"; };
+		0403B0FF243DC0F000001E00 /* ActiveSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActiveSession.m; sourceTree = "<group>"; };
+		0403B102243DC10C00001E00 /* UserSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserSettings.h; sourceTree = "<group>"; };
+		0403B103243DC10C00001E00 /* UserSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserSettings.m; sourceTree = "<group>"; };
+		0403B107243DC60B00001E00 /* SettingsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
+		0403B108243DC60B00001E00 /* SettingsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
+		0403B10B243DF2BB00001E00 /* SearchEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchEngine.h; sourceTree = "<group>"; };
+		0403B10C243DF2BB00001E00 /* SearchEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchEngine.m; sourceTree = "<group>"; };
+		0403B10F243E299900001E00 /* SearchRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchRequest.h; sourceTree = "<group>"; };
+		0403B110243E299900001E00 /* SearchRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchRequest.m; sourceTree = "<group>"; };
+		0403B112243E2F9400001E00 /* SearchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchScreen.png; sourceTree = "<group>"; };
+		042C439E243F4BC000E7B5B3 /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		042C439F243F4BC000E7B5B3 /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
+		042C43A2243F4E8C00E7B5B3 /* PlaceTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceTableCell.h; sourceTree = "<group>"; };
+		042C43A3243F4E8C00E7B5B3 /* PlaceTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceTableCell.m; sourceTree = "<group>"; };
+		045F2247244055E600A470E2 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		045F2248244055E600A470E2 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		045F224B244073E600A470E2 /* DateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
+		045F224C244073E600A470E2 /* DateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
+		047273E72440BFE800908B78 /* LoadingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
+		047273E82440BFE800908B78 /* LoadingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
+		047273EB2440C62E00908B78 /* FlightRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightRequest.h; sourceTree = "<group>"; };
+		047273EC2440C62E00908B78 /* FlightRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightRequest.m; sourceTree = "<group>"; };
+		0487220E243CE9960028992D /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		0487220F243CE9960028992D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		048C5B302444B9E200A0D408 /* Flight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
+		048C5B312444B9E200A0D408 /* Flight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
+		048C5B342444BD3000A0D408 /* TicketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketManager.h; sourceTree = "<group>"; };
+		048C5B352444BD3000A0D408 /* TicketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketManager.m; sourceTree = "<group>"; };
+		048C5B382444C1C900A0D408 /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
+		048C5B392444C1C900A0D408 /* PresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
+		048C5B3B2445AB8D00A0D408 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
+		048C5B3E2445D0C100A0D408 /* TicketViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketViewCell.h; sourceTree = "<group>"; };
+		048C5B3F2445D0C100A0D408 /* TicketViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketViewCell.m; sourceTree = "<group>"; };
+		04B98B88244765D600787274 /* MapViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewCell.h; sourceTree = "<group>"; };
+		04B98B89244765D600787274 /* MapViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewCell.m; sourceTree = "<group>"; };
+		04E717F8243B8A9E00AA9335 /* TripPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E717FB243B8A9E00AA9335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04E717FC243B8A9E00AA9335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04E7180A243B8AA500AA9335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04E7180D243B8AA500AA9335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04E7180F243B8AA500AA9335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E71810243B8AA500AA9335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04E7181B243C6B8C00AA9335 /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		04E7181C243C6B8C00AA9335 /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		04E7181F243C74DB00AA9335 /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
+		04E71826243C907F00AA9335 /* Airport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airport.h; sourceTree = "<group>"; };
+		04E71827243C907F00AA9335 /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
+		04E71829243C909400AA9335 /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		04E7182A243C909400AA9335 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		04E7182D243C90AB00AA9335 /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		04E7182E243C90AB00AA9335 /* City.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		04E71833243C9B0200AA9335 /* DestinationsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DestinationsManager.h; sourceTree = "<group>"; };
+		04E71834243C9B0200AA9335 /* DestinationsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DestinationsManager.m; sourceTree = "<group>"; };
+		04E71837243CA4D800AA9335 /* DestinationsRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DestinationsRequestManager.h; sourceTree = "<group>"; };
+		04E71838243CA4D800AA9335 /* DestinationsRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DestinationsRequestManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04E717F5243B8A9E00AA9335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0403B0FC243DC0B000001E00 /* Session & Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0403B101243DC0F500001E00 /* Settings */,
+				0403B0FD243DC0C400001E00 /* Session Class */,
+			);
+			path = "Session & Settings";
+			sourceTree = "<group>";
+		};
+		0403B0FD243DC0C400001E00 /* Session Class */ = {
+			isa = PBXGroup;
+			children = (
+				0403B0FE243DC0F000001E00 /* ActiveSession.h */,
+				0403B0FF243DC0F000001E00 /* ActiveSession.m */,
+			);
+			path = "Session Class";
+			sourceTree = "<group>";
+		};
+		0403B101243DC0F500001E00 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0403B106243DC5F100001E00 /* Manager */,
+				0403B105243DC5D400001E00 /* Settings Class */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0403B105243DC5D400001E00 /* Settings Class */ = {
+			isa = PBXGroup;
+			children = (
+				0403B102243DC10C00001E00 /* UserSettings.h */,
+				0403B103243DC10C00001E00 /* UserSettings.m */,
+			);
+			path = "Settings Class";
+			sourceTree = "<group>";
+		};
+		0403B106243DC5F100001E00 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0403B107243DC60B00001E00 /* SettingsManager.h */,
+				0403B108243DC60B00001E00 /* SettingsManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0403B10A243DF29800001E00 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0403B10B243DF2BB00001E00 /* SearchEngine.h */,
+				0403B10C243DF2BB00001E00 /* SearchEngine.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0403B10E243E297600001E00 /* Search Request */ = {
+			isa = PBXGroup;
+			children = (
+				0403B10F243E299900001E00 /* SearchRequest.h */,
+				0403B110243E299900001E00 /* SearchRequest.m */,
+			);
+			path = "Search Request";
+			sourceTree = "<group>";
+		};
+		042C436F243F09C400E7B5B3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B372444C1AF00A0D408 /* Presenting Controller */,
+				047273E52440BFC000908B78 /* Loading Controller */,
+				04E71817243C6AB600AA9335 /* Launch Handler */,
+				045F2246244055A300A470E2 /* Main */,
+				0487220D243CE9030028992D /* Search Controller */,
+				042C439D243F4B3B00E7B5B3 /* Places Controller */,
+				045F224A24405EB600A470E2 /* Dates Controller */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		042C439D243F4B3B00E7B5B3 /* Places Controller */ = {
+			isa = PBXGroup;
+			children = (
+				042C439E243F4BC000E7B5B3 /* PlaceViewController.h */,
+				042C439F243F4BC000E7B5B3 /* PlaceViewController.m */,
+				042C43A1243F4E6F00E7B5B3 /* Place Cell */,
+			);
+			path = "Places Controller";
+			sourceTree = "<group>";
+		};
+		042C43A1243F4E6F00E7B5B3 /* Place Cell */ = {
+			isa = PBXGroup;
+			children = (
+				042C43A2243F4E8C00E7B5B3 /* PlaceTableCell.h */,
+				042C43A3243F4E8C00E7B5B3 /* PlaceTableCell.m */,
+			);
+			path = "Place Cell";
+			sourceTree = "<group>";
+		};
+		045F2246244055A300A470E2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				045F2247244055E600A470E2 /* MainViewController.h */,
+				045F2248244055E600A470E2 /* MainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		045F224A24405EB600A470E2 /* Dates Controller */ = {
+			isa = PBXGroup;
+			children = (
+				045F224B244073E600A470E2 /* DateViewController.h */,
+				045F224C244073E600A470E2 /* DateViewController.m */,
+			);
+			path = "Dates Controller";
+			sourceTree = "<group>";
+		};
+		047273E52440BFC000908B78 /* Loading Controller */ = {
+			isa = PBXGroup;
+			children = (
+				047273E72440BFE800908B78 /* LoadingViewController.h */,
+				047273E82440BFE800908B78 /* LoadingViewController.m */,
+			);
+			path = "Loading Controller";
+			sourceTree = "<group>";
+		};
+		047273EA2440C5F600908B78 /* Flights Requests */ = {
+			isa = PBXGroup;
+			children = (
+				047273EB2440C62E00908B78 /* FlightRequest.h */,
+				047273EC2440C62E00908B78 /* FlightRequest.m */,
+			);
+			path = "Flights Requests";
+			sourceTree = "<group>";
+		};
+		0487220D243CE9030028992D /* Search Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0487220E243CE9960028992D /* SearchViewController.h */,
+				0487220F243CE9960028992D /* SearchViewController.m */,
+			);
+			path = "Search Controller";
+			sourceTree = "<group>";
+		};
+		048C5B2F2444B9B300A0D408 /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B302444B9E200A0D408 /* Flight.h */,
+				048C5B312444B9E200A0D408 /* Flight.m */,
+			);
+			path = Flight;
+			sourceTree = "<group>";
+		};
+		048C5B332444BD1500A0D408 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B342444BD3000A0D408 /* TicketManager.h */,
+				048C5B352444BD3000A0D408 /* TicketManager.m */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		048C5B372444C1AF00A0D408 /* Presenting Controller */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B382444C1C900A0D408 /* PresentViewController.h */,
+				048C5B392444C1C900A0D408 /* PresentViewController.m */,
+				04B98B872447646C00787274 /* Map Cell */,
+				048C5B3D2445D0A000A0D408 /* Ticket Cell */,
+			);
+			path = "Presenting Controller";
+			sourceTree = "<group>";
+		};
+		048C5B3D2445D0A000A0D408 /* Ticket Cell */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B3E2445D0C100A0D408 /* TicketViewCell.h */,
+				048C5B3F2445D0C100A0D408 /* TicketViewCell.m */,
+			);
+			path = "Ticket Cell";
+			sourceTree = "<group>";
+		};
+		04B98B872447646C00787274 /* Map Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04B98B88244765D600787274 /* MapViewCell.h */,
+				04B98B89244765D600787274 /* MapViewCell.m */,
+			);
+			path = "Map Cell";
+			sourceTree = "<group>";
+		};
+		04E717EF243B8A9E00AA9335 = {
+			isa = PBXGroup;
+			children = (
+				04E717FA243B8A9E00AA9335 /* TripPlaner */,
+				04E717F9243B8A9E00AA9335 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04E717F9243B8A9E00AA9335 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04E717F8243B8A9E00AA9335 /* TripPlaner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04E717FA243B8A9E00AA9335 /* TripPlaner */ = {
+			isa = PBXGroup;
+			children = (
+				04E717FB243B8A9E00AA9335 /* AppDelegate.h */,
+				04E717FC243B8A9E00AA9335 /* AppDelegate.m */,
+				042C436F243F09C400E7B5B3 /* View Controllers */,
+				0403B0FC243DC0B000001E00 /* Session & Settings */,
+				04E71831243C99F300AA9335 /* Web Request Managers */,
+				04E71830243C995B00AA9335 /* Data Managers */,
+				04E7180A243B8AA500AA9335 /* Assets.xcassets */,
+				04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */,
+				04E71821243C8FDB00AA9335 /* Essential Classes */,
+				04E7180F243B8AA500AA9335 /* Info.plist */,
+				04E71810243B8AA500AA9335 /* main.m */,
+				04E7181E243C746900AA9335 /* Images */,
+			);
+			path = TripPlaner;
+			sourceTree = "<group>";
+		};
+		04E71817243C6AB600AA9335 /* Launch Handler */ = {
+			isa = PBXGroup;
+			children = (
+				04E7181B243C6B8C00AA9335 /* LaunchViewController.h */,
+				04E7181C243C6B8C00AA9335 /* LaunchViewController.m */,
+			);
+			path = "Launch Handler";
+			sourceTree = "<group>";
+		};
+		04E7181E243C746900AA9335 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0403B112243E2F9400001E00 /* SearchScreen.png */,
+				048C5B3B2445AB8D00A0D408 /* plane.png */,
+				04E7181F243C74DB00AA9335 /* LaunchScreen.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		04E71821243C8FDB00AA9335 /* Essential Classes */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B2F2444B9B300A0D408 /* Flight */,
+				0403B10E243E297600001E00 /* Search Request */,
+				04E71824243C902F00AA9335 /* City */,
+				04E71823243C901E00AA9335 /* Country */,
+				04E71822243C900F00AA9335 /* Airport */,
+			);
+			path = "Essential Classes";
+			sourceTree = "<group>";
+		};
+		04E71822243C900F00AA9335 /* Airport */ = {
+			isa = PBXGroup;
+			children = (
+				04E71826243C907F00AA9335 /* Airport.h */,
+				04E71827243C907F00AA9335 /* Airport.m */,
+			);
+			path = Airport;
+			sourceTree = "<group>";
+		};
+		04E71823243C901E00AA9335 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				04E71829243C909400AA9335 /* Country.h */,
+				04E7182A243C909400AA9335 /* Country.m */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
+		04E71824243C902F00AA9335 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				04E7182D243C90AB00AA9335 /* City.h */,
+				04E7182E243C90AB00AA9335 /* City.m */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		04E71830243C995B00AA9335 /* Data Managers */ = {
+			isa = PBXGroup;
+			children = (
+				048C5B332444BD1500A0D408 /* Results */,
+				0403B10A243DF29800001E00 /* Search */,
+				04E71832243C9A9300AA9335 /* Destinations */,
+			);
+			path = "Data Managers";
+			sourceTree = "<group>";
+		};
+		04E71831243C99F300AA9335 /* Web Request Managers */ = {
+			isa = PBXGroup;
+			children = (
+				047273EA2440C5F600908B78 /* Flights Requests */,
+				04E71836243CA49600AA9335 /* Destinations Requests */,
+			);
+			path = "Web Request Managers";
+			sourceTree = "<group>";
+		};
+		04E71832243C9A9300AA9335 /* Destinations */ = {
+			isa = PBXGroup;
+			children = (
+				04E71833243C9B0200AA9335 /* DestinationsManager.h */,
+				04E71834243C9B0200AA9335 /* DestinationsManager.m */,
+			);
+			path = Destinations;
+			sourceTree = "<group>";
+		};
+		04E71836243CA49600AA9335 /* Destinations Requests */ = {
+			isa = PBXGroup;
+			children = (
+				04E71837243CA4D800AA9335 /* DestinationsRequestManager.h */,
+				04E71838243CA4D800AA9335 /* DestinationsRequestManager.m */,
+			);
+			path = "Destinations Requests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04E717F7243B8A9E00AA9335 /* TripPlaner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04E71814243B8AA500AA9335 /* Build configuration list for PBXNativeTarget "TripPlaner" */;
+			buildPhases = (
+				04E717F4243B8A9E00AA9335 /* Sources */,
+				04E717F5243B8A9E00AA9335 /* Frameworks */,
+				04E717F6243B8A9E00AA9335 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TripPlaner;
+			productName = TripPlaner;
+			productReference = 04E717F8243B8A9E00AA9335 /* TripPlaner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04E717F0243B8A9E00AA9335 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Sam Mazniker";
+				TargetAttributes = {
+					04E717F7243B8A9E00AA9335 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 04E717F3243B8A9E00AA9335 /* Build configuration list for PBXProject "TripPlaner" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04E717EF243B8A9E00AA9335;
+			productRefGroup = 04E717F9243B8A9E00AA9335 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04E717F7243B8A9E00AA9335 /* TripPlaner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04E717F6243B8A9E00AA9335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E71820243C74DB00AA9335 /* LaunchScreen.png in Resources */,
+				0403B113243E2F9400001E00 /* SearchScreen.png in Resources */,
+				048C5B3C2445AB8D00A0D408 /* plane.png in Resources */,
+				04E7180E243B8AA500AA9335 /* LaunchScreen.storyboard in Resources */,
+				04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04E717F4243B8A9E00AA9335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0403B100243DC0F000001E00 /* ActiveSession.m in Sources */,
+				047273ED2440C62E00908B78 /* FlightRequest.m in Sources */,
+				048C5B3A2444C1C900A0D408 /* PresentViewController.m in Sources */,
+				04E71835243C9B0200AA9335 /* DestinationsManager.m in Sources */,
+				04E71811243B8AA500AA9335 /* main.m in Sources */,
+				04872210243CE9960028992D /* SearchViewController.m in Sources */,
+				042C43A0243F4BC000E7B5B3 /* PlaceViewController.m in Sources */,
+				04E71828243C907F00AA9335 /* Airport.m in Sources */,
+				047273E92440BFE800908B78 /* LoadingViewController.m in Sources */,
+				04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */,
+				04E7182B243C909400AA9335 /* Country.m in Sources */,
+				04E71839243CA4D800AA9335 /* DestinationsRequestManager.m in Sources */,
+				048C5B322444B9E200A0D408 /* Flight.m in Sources */,
+				0403B109243DC60B00001E00 /* SettingsManager.m in Sources */,
+				0403B104243DC10C00001E00 /* UserSettings.m in Sources */,
+				04B98B8A244765D600787274 /* MapViewCell.m in Sources */,
+				0403B10D243DF2BB00001E00 /* SearchEngine.m in Sources */,
+				048C5B362444BD3000A0D408 /* TicketManager.m in Sources */,
+				045F2249244055E600A470E2 /* MainViewController.m in Sources */,
+				048C5B402445D0C100A0D408 /* TicketViewCell.m in Sources */,
+				0403B111243E299900001E00 /* SearchRequest.m in Sources */,
+				045F224D244073E600A470E2 /* DateViewController.m in Sources */,
+				04E7182F243C90AB00AA9335 /* City.m in Sources */,
+				042C43A4243F4E8C00E7B5B3 /* PlaceTableCell.m in Sources */,
+				04E7181D243C6B8C00AA9335 /* LaunchViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04E7180D243B8AA500AA9335 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04E71812243B8AA500AA9335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		04E71813243B8AA500AA9335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04E71815243B8AA500AA9335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75TFUZ9FZ4;
+				INFOPLIST_FILE = TripPlaner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SamMaKo.TripPlaner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04E71816243B8AA500AA9335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75TFUZ9FZ4;
+				INFOPLIST_FILE = TripPlaner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SamMaKo.TripPlaner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04E717F3243B8A9E00AA9335 /* Build configuration list for PBXProject "TripPlaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E71812243B8AA500AA9335 /* Debug */,
+				04E71813243B8AA500AA9335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04E71814243B8AA500AA9335 /* Build configuration list for PBXNativeTarget "TripPlaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E71815243B8AA500AA9335 /* Debug */,
+				04E71816243B8AA500AA9335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04E717F0243B8A9E00AA9335 /* Project object */;
+}
