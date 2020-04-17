@@ -15,19 +15,17 @@
     stringURL = @"https://api.travelpayouts.com/v2/prices/latest";
     NSString* appendingURL = [self generateApiFromRequest:request];
     stringURL = [stringURL stringByAppendingString:appendingURL];
-    NSLog(@"%@\n\n", stringURL);
     NSURL* urlRequest = [NSURL URLWithString: stringURL];
     
     NSURLSessionDataTask* RequestDataTask = [[NSURLSession sharedSession] dataTaskWithURL: urlRequest completionHandler:^(NSData* data, NSURLResponse* respone, NSError* error){
         NSDictionary* JSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-        NSLog(@"%@\n\n", JSON);
         BOOL success = [JSON valueForKey:@"success"];
         if(success){
             NSArray* Data = [[NSArray alloc] init];
             Data = [JSON valueForKey:@"data"];
             completionHandler(Data);
         } else {
-            NSLog(@"NOPE");
+            NSLog(@"Warning! Error while extracting data from JSON.\n");
         }
     }];
     

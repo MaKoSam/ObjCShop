@@ -11,12 +11,14 @@
 #import "ActiveSession.h"
 #import "Airport.h"
 #import "TicketViewCell.h"
+#import "MapViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PresentViewController : UIViewController <UITableViewDataSource>
 
 @property (nonatomic, strong) UILabel* header;
+@property (nonatomic, strong) UIButton* SearchButton;
 @property (nonatomic, strong) UITableView* presentingTable;
 
 @property (nonatomic, strong) NSArray* tickets;

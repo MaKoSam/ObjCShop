@@ -87,4 +87,13 @@
     return @"NULL";
 }
 
+-(City*) findCityByNameReturnSelf:(NSString*)name{
+    for(City* items in [DestinationsManager sharedInstance].cities){
+        if([items.name isEqual:name] || [items.code isEqual:name] || [[items.translations valueForKey:[ActiveSession sharedInstance].settings.activeSettings.language] isEqual:name]){
+            return items;
+        }
+    }
+    return nil;
+}
+
 @end

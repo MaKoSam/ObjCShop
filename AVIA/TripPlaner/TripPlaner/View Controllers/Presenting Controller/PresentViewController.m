@@ -33,6 +33,8 @@
         _presentingTable.translatesAutoresizingMaskIntoConstraints = NO;
     }
     [_presentingTable registerClass:[TicketViewCell self] forCellReuseIdentifier:@"ticket"];
+    [_presentingTable registerClass:[MapViewCell self] forCellReuseIdentifier:@"map"];
+    
     [_presentingTable setRowHeight:600.0];
     _presentingTable.dataSource = self;
     [self setUpViews];
@@ -42,17 +44,39 @@
     [super viewDidLoad];
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.tickets count];
+    if(section == 0){
+        return 1;
+    } else {
+        return [self.tickets count];
+    }
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    if(indexPath.section == 0){
+        MapViewCell* newCell = [_presentingTable dequeueReusableCellWithIdentifier:@"map"];
+        if(!newCell){
+            newCell = [[MapViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"map"];
+        }
+        [newCell updateCitiesWithOrigin:[ActiveSession sharedInstance].search.originCity Destination:[ActiveSession sharedInstance].search.destCity];
+        return newCell;
+    }
+    
     TicketViewCell* newCell = [_presentingTable dequeueReusableCellWithIdentifier:@"ticket"];
     if(!newCell){
         newCell = [[TicketViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ticket"];
     }
     [newCell updateForFlight:[_tickets objectAtIndex:[indexPath row]]];
     return newCell;
+}
+
+-(void)performNewSearch:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)setUpViews{
@@ -64,10 +88,39 @@
     
     NSLayoutConstraint* headerViewTop = [NSLayoutConstraint constraintWithItem:headerView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:30.0];
     NSLayoutConstraint* headerViewLead = [NSLayoutConstraint constraintWithItem:headerView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:10.0];
-    NSLayoutConstraint* headerViewTrail = [NSLayoutConstraint constraintWithItem:headerView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-30.0];
+    NSLayoutConstraint* headerViewTrail = [NSLayoutConstraint constraintWithItem:headerView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-100.0];
     NSLayoutConstraint* headerViewHeight = [NSLayoutConstraint  constraintWithItem:headerView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:60];
     
     [self.view addConstraints:@[headerViewTop, headerViewLead, headerViewTrail, headerViewHeight]];
+    
+    UIView* headerSearchView = [[UIView alloc] init];
+    headerSearchView.translatesAutoresizingMaskIntoConstraints = NO;
+    [headerSearchView setBackgroundColor:[UIColor whiteColor]];
+    [[headerSearchView layer] setCornerRadius:15.0];
+    [self.view addSubview: headerSearchView];
+    
+    NSLayoutConstraint* headerSearchViewTop = [NSLayoutConstraint constraintWithItem:headerSearchView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:30.0];
+    NSLayoutConstraint* headerSearchViewLead = [NSLayoutConstraint constraintWithItem:headerSearchView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* headerSearchViewTrail = [NSLayoutConstraint constraintWithItem:headerSearchView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-30.0];
+    NSLayoutConstraint* headerSearchViewHeight = [NSLayoutConstraint  constraintWithItem:headerSearchView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:60];
+    
+    [self.view addConstraints:@[headerSearchViewTop, headerSearchViewLead, headerSearchViewTrail, headerSearchViewHeight]];
+    
+    if(!self.SearchButton){
+        _SearchButton = [[UIButton alloc] init];
+        _SearchButton.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    
+    [_SearchButton setTitle:@"Поиск" forState: UIControlStateNormal];
+    [_SearchButton addTarget:self action:@selector(performNewSearch:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_SearchButton];
+    
+    NSLayoutConstraint* searchTop = [NSLayoutConstraint constraintWithItem:_SearchButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:30.0];
+    NSLayoutConstraint* searchLead = [NSLayoutConstraint constraintWithItem:_SearchButton attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:10.0];
+    NSLayoutConstraint* searchTrail = [NSLayoutConstraint constraintWithItem:_SearchButton attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-30.0];
+    NSLayoutConstraint* searchHeight = [NSLayoutConstraint  constraintWithItem:_SearchButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:60];
+    
+    [self.view addConstraints:@[searchTop, searchLead, searchTrail, searchHeight]];
     
     if(!self.header){
         _header = [[UILabel alloc] init];

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor greenColor]];
+    [self.view setBackgroundColor:[UIColor blackColor]];
     dispatch_queue_t mainQueue = dispatch_get_main_queue();
     FlightRequest* Requester = [[FlightRequest alloc] init];
     [Requester flightsFromSearchRequest:[ActiveSession sharedInstance].search :^(NSArray* Data){

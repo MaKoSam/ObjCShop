@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString*) findCountryByKeyReturnName:(NSString*)key;
 -(NSString*) findCityByKeyReturnName:(NSString*)key;
 
+-(City*) findCityByNameReturnSelf:(NSString*)name;
+
 @end
 
 NS_ASSUME_NONNULL_END

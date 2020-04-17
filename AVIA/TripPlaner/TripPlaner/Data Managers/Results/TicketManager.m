@@ -26,7 +26,6 @@
     
     for(NSDictionary* item in JSON){
         Flight* new = [[Flight alloc] initWithDictionary:item];
-        NSLog(@"%@\n", new);
         [_tickets addObject: new];
     }
 }

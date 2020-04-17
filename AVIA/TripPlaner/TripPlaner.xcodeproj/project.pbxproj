@@ -25,6 +25,7 @@
 		048C5B3A2444C1C900A0D408 /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B392444C1C900A0D408 /* PresentViewController.m */; };
 		048C5B3C2445AB8D00A0D408 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C5B3B2445AB8D00A0D408 /* plane.png */; };
 		048C5B402445D0C100A0D408 /* TicketViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C5B3F2445D0C100A0D408 /* TicketViewCell.m */; };
+		04B98B8A244765D600787274 /* MapViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B98B89244765D600787274 /* MapViewCell.m */; };
 		04E717FD243B8A9E00AA9335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E717FC243B8A9E00AA9335 /* AppDelegate.m */; };
 		04E7180B243B8AA500AA9335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180A243B8AA500AA9335 /* Assets.xcassets */; };
 		04E7180E243B8AA500AA9335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E7180C243B8AA500AA9335 /* LaunchScreen.storyboard */; };
@@ -73,6 +74,8 @@
 		048C5B3B2445AB8D00A0D408 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		048C5B3E2445D0C100A0D408 /* TicketViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketViewCell.h; sourceTree = "<group>"; };
 		048C5B3F2445D0C100A0D408 /* TicketViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketViewCell.m; sourceTree = "<group>"; };
+		04B98B88244765D600787274 /* MapViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewCell.h; sourceTree = "<group>"; };
+		04B98B89244765D600787274 /* MapViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewCell.m; sourceTree = "<group>"; };
 		04E717F8243B8A9E00AA9335 /* TripPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E717FB243B8A9E00AA9335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04E717FC243B8A9E00AA9335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 		04B98B872447646C00787274 /* Map Cell */ = {
 			isa = PBXGroup;
 			children = (
+				04B98B88244765D600787274 /* MapViewCell.h */,
+				04B98B89244765D600787274 /* MapViewCell.m */,
 			);
 			path = "Map Cell";
 			sourceTree = "<group>";
@@ -312,8 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				04E717FB243B8A9E00AA9335 /* AppDelegate.h */,
-				042C436F243F09C400E7B5B3 /* View Controllers */,
 				04E717FC243B8A9E00AA9335 /* AppDelegate.m */,
+				042C436F243F09C400E7B5B3 /* View Controllers */,
 				0403B0FC243DC0B000001E00 /* Session & Settings */,
 				04E71831243C99F300AA9335 /* Web Request Managers */,
 				04E71830243C995B00AA9335 /* Data Managers */,
@@ -509,6 +514,7 @@
 				048C5B322444B9E200A0D408 /* Flight.m in Sources */,
 				0403B109243DC60B00001E00 /* SettingsManager.m in Sources */,
 				0403B104243DC10C00001E00 /* UserSettings.m in Sources */,
+				04B98B8A244765D600787274 /* MapViewCell.m in Sources */,
 				0403B10D243DF2BB00001E00 /* SearchEngine.m in Sources */,
 				048C5B362444BD3000A0D408 /* TicketManager.m in Sources */,
 				045F2249244055E600A470E2 /* MainViewController.m in Sources */,
